@@ -13,7 +13,7 @@ public class Node {
     // Each node stores one point
     public Point point = null;
 
-    // parent
+    // parent - because I think in our search we need to be able to go up and down the tree
     public Node parent = null;
 
     // left child

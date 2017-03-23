@@ -26,45 +26,40 @@ public class NaiveNN implements NearestNeigh{
         // ANT IMPLEMENTATION
 
         List<Point> searchResults = new ArrayList<Point>(); // arraylist to store search results.
-        double kPointDist = 0; // Distance of last poitn in searchResults list from searchTerm
+        double kPointDist = 1000000; // Distance of last poitn in searchResults list from searchTerm
 
         // Search naive arraylist points and find the k points with minimum distance from searchTerm.
         // NOTE: need to access our arrayList points.  How do i do that from here?
 
         for (Point point : index) {
             
-            if (searchResults.size() == k){
-
-            // if searchResults already holds k points & point is further away than them, ignore
-
-                if (point.distTo(searchTerm) >= kPointDist){
-                    continue;
-                }
+            if ((searchResults.size() == k) && (point.distTo(searchTerm) >= kPointDist)){
+                continue;
             } 
 
-            // Either searchResults not full, or point is closer than points in searchResults
-
-            // Add point to searchResults positioning it in acsending order of distance
-
-            for (int i = 0, i < k, i++){
-                if (point.distTo(searchTerm) > searchResults.get(i).distTo(searchTerm)){
+            // Either searchResults not yet full, or point is closer than points in searchResults. Add point to searchResults 
+            // positioning it in ascending order of distance
+            
+            for (int i = 0; i < k; i++){
+                if ((searchResults.contains(i)) && (point.distTo(searchTerm) > searchResults.get(i).distTo(searchTerm))){
                     continue;
                 }
                 else {
                     searchResults.add(i,point); // add point at position i in results list
+                    break;
                 }
             }
 
             // If size of searchResults is now greater than k, drop last point
 
-            if (searchResults.size > k){
+            if (searchResults.size() > k){
                 searchResults.remove(k);
             }
             // Update kPointDist
 
-            kPointDist = searchResults.get(k-1).distTo(searchTerm);            
+            kPointDist = searchResults.get(searchResults.size()-1).distTo(searchTerm);            
         }
-            
+        
         return searchResults;
     }
 
@@ -87,7 +82,7 @@ public class NaiveNN implements NearestNeigh{
             return false;
         }
         else{
-            int i = this.indexOf(point);
+            int i = this.index.indexOf(point);
             index.remove(i);        
         }     
         return true;

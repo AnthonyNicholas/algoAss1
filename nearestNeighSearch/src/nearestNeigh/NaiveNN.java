@@ -32,16 +32,27 @@ public class NaiveNN implements NearestNeigh{
         // NOTE: need to access our arrayList points.  How do i do that from here?
 
         for (Point point : index) {
+
+            // If point is not the right category, ignore.
+            if (point.cat != searchTerm.cat){
+                continue;
+            } 
             
+            // if searchResults is fully populated and point is further away than furthest current result, ignore.
             if ((searchResults.size() == k) && (point.distTo(searchTerm) >= kPointDist)){
                 continue;
             } 
 
-            // Either searchResults not yet full, or point is closer than points in searchResults. Add point to searchResults 
-            // positioning it in ascending order of distance
+            // if searchResults empty, add point.
+            if (searchResults.isEmpty()){
+                searchResults.add(point);
+                continue;
+            } 
+
+            // Close point - add to searchResults positioning it in ascending order of distance
             
-            for (int i = 0; i < k; i++){
-                if ((searchResults.contains(i)) && (point.distTo(searchTerm) > searchResults.get(i).distTo(searchTerm))){
+            for (int i = 0; i < searchResults.size(); i++){
+                if (point.distTo(searchTerm) > searchResults.get(i).distTo(searchTerm)){
                     continue;
                 }
                 else {
@@ -55,8 +66,8 @@ public class NaiveNN implements NearestNeigh{
             if (searchResults.size() > k){
                 searchResults.remove(k);
             }
-            // Update kPointDist
 
+            // Update kPointDist
             kPointDist = searchResults.get(searchResults.size()-1).distTo(searchTerm);            
         }
         

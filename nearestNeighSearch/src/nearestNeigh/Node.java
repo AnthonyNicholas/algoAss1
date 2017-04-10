@@ -10,16 +10,40 @@ import static nearestNeigh.Category.*;
  */
 public class Node {
 
-    // Each node stores one point
-    public Point point = null;
+    public Point point = null; // Each node stores one point
+    public Node parent = null; // parent - because I think in our search we need to be able to go up and down the tree
+    public Node leftChild = null; // left child
+    public Node rightChild = null;     // right child
+    
+    /**
+     * Constructor
+     */
+    public Node(Point point) {
+        this.point = point;
+    }
 
-    // parent - because I think in our search we need to be able to go up and down the tree
-    public Node parent = null;
+    
+    public void setLeft(Node leftChild) {
+        
+        this.leftChild = leftChild;
+        return;
 
-    // left child
-    public Node leftChild = null;
+    }
 
-    // right child
-    public Node rightChild = null;
+    public void setRight(Node rightChild) {
+    
+        this.leftChild = leftChild;
+        return;
+        
+    }
+
+    public void setParent(Node parentNode) {
+    
+        this.parent = parentNode;
+        return;
+    }
+
+
+
 
 } // end of class Node

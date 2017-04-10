@@ -1,4 +1,5 @@
 package nearestNeigh;
+import java.util.*;// have imported to assist with comparators
 
 import java.util.Objects;
 import static nearestNeigh.Category.*;
@@ -68,7 +69,7 @@ public class Point {
     }
 
     /**
-     * toSring for Point.
+     * toString for Point.
      */
     @Override
     public String toString() {
@@ -178,5 +179,7 @@ public class Point {
     private double rad2deg(double rad) {
         return (rad * 180.0 / Math.PI);
     }
+
+
 
 } // end of class Point

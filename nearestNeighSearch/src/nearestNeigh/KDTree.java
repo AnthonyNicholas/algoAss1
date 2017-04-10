@@ -20,4 +20,23 @@ public class KDTree {
         this.size = 0;
     }
 
+    /**
+     * Recursively prints KDTree
+     */
+    
+    public void printTree(Node currNode, int level) {
+    level = level + 1;
+    
+    if (currNode == null){
+        return;
+    }
+    System.out.print("*");
+    System.out.println("Level =" + level + currNode.point.toString());
+    System.out.print("---");
+    printTree(currNode.leftChild, level);
+    printTree(currNode.rightChild, level);    
+    
+    return;
+    }
+
 } // end of class KdTree

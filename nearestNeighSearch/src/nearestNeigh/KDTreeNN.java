@@ -42,18 +42,23 @@ public class KDTreeNN implements NearestNeigh{
             }
         }
 
-        rTree.root = buildTree(rPoints, true);
-        eTree.root = buildTree(ePoints, true);
-        hTree.root = buildTree(hPoints, true);
+        rTree.root = buildTree(rPoints, true, 0);
+        // rTree.printTree(rTree.root, 0);
+        // System.out.println(rTree.root.rightChild.point);
+        eTree.root = buildTree(ePoints, true, 0);
+        hTree.root = buildTree(hPoints, true, 0);
 
     }
     
     // Recursive function
    
-    public Node buildTree(List<Point> points, boolean bXDim) { 
-        int median;
+    public Node buildTree(List<Point> points, boolean bXDim, int level) { 
+        int median = 0;
         List<Point> sortedPoints = new ArrayList<Point>();
-        Node currParent, leftChild, rightChild;
+        Node currNode = null; 
+        Node leftChild = null; 
+        Node rightChild = null;
+        level += 1;
 
         // First sort the list by Dimension and find median
         if (bXDim == true){
@@ -64,13 +69,17 @@ public class KDTreeNN implements NearestNeigh{
             Collections.sort(points, BYDIM);
             sortedPoints.addAll(points);
         }
+        
         if (sortedPoints.isEmpty()){
             return null;
         }
         median = findMedian(sortedPoints); 
         
         // construct a node for the median point 
-        currParent = buildNode(sortedPoints.get(median)); 
+        currNode = buildNode(sortedPoints.get(median)); 
+        if (currNode != null){
+            System.out.println("LEVEL:" + level + " POINT: " + currNode.point);
+        }
         leftChild = null; 
         rightChild = null; 
         
@@ -78,25 +87,23 @@ public class KDTreeNN implements NearestNeigh{
         if (median > 0) {
             
             // Invert boolean value (effectively changing the dimension we split on next) 
-            leftChild = buildTree(sortedPoints.subList(0,median-1), !bXDim); 
+            leftChild = buildTree(sortedPoints.subList(0,median-1), !bXDim, level); 
         }
         // check if there is a right partition 
         if (median < (points.size()-1)){
             // Invert the boolean value (effectively changing the dimension we split on next) 
-            rightChild = buildTree(sortedPoints.subList(median+1,(points.size()-1)), !bXDim); 
+            rightChild = buildTree(sortedPoints.subList(median+1,(points.size()-1)), !bXDim, level); 
         } 
-        currParent.setLeft(leftChild); 
-        currParent.setRight(rightChild); 
-        
-        // System.out.println(leftChild);
-        
+         
         if (leftChild != null){
-            leftChild.setParent(currParent); // Each node keeps track of its parent node.  
+            currNode.setLeft(leftChild);
+            leftChild.setParent(currNode); // Each node keeps track of its parent node.  
         }
         if (rightChild != null){
-            rightChild.setParent(currParent);
+            currNode.setRight(rightChild);
+            rightChild.setParent(currNode);
         }
-        return currParent;
+        return currNode;
     }
  
 
@@ -162,17 +169,17 @@ public class KDTreeNN implements NearestNeigh{
         
         childList = treeToList(deletedNode); //Generate list from current child tree of deletedNode
         if (parent == null){
-            tree.root = buildTree(childList, true);
+            tree.root = buildTree(childList, true, 0);
         }
         
         if (parent.leftChild.point.equals(deletedNode.point)){
             // join new tree as leftChild of parent
-            parent.leftChild = buildTree(childList, true);
+            parent.leftChild = buildTree(childList, true,0);
             parent.leftChild.parent = parent;
         }
         else{
             // join new tree as rightChild of parent
-            parent.rightChild = buildTree(childList, true);
+            parent.rightChild = buildTree(childList, true,0);
             parent.rightChild.parent = parent;
         }
         
@@ -354,9 +361,13 @@ public class KDTreeNN implements NearestNeigh{
     }
 
     private int findMedian(List<Point> sortedPoints) {
+        
+        if (sortedPoints.size() == 0){
+            return 0;
+        }
     
-        return (int)(sortedPoints.size()/2); //if even number, will choose lower value
-
+        return (int)((sortedPoints.size() - 1)/2); //if even number, will choose lower value
+        
     }
 
     private Node buildNode(Point medianPoint) {

@@ -73,7 +73,7 @@ public class Point {
      */
     @Override
     public String toString() {
-        return "Point{" + "id=" + id + ", cat=" + cat + ", lat=" + lat + ", lon=" + lon + '}';
+        return "Point{" + "id=" + id + ", cat=" + cat + ", lat=" + lat + ", lon=" + lon + "}";
     }
 
 

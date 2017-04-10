@@ -50,12 +50,17 @@ public class KDTreeNN implements NearestNeigh{
 
     }
     
-    // Recursive function
-   
+    
+    /**
+     * recursive function that builds KDTree.  
+     * @param List of points
+     * @return Node that is the root of the tree
+     */
+
     public Node buildTree(List<Point> points, boolean bXDim, int level) { 
         int median = 0;
         List<Point> sortedPoints = new ArrayList<Point>();
-        Node currNode = null; 
+        Node currNode = new Node(); 
         Node leftChild = null; 
         Node rightChild = null;
         level += 1;
@@ -69,30 +74,49 @@ public class KDTreeNN implements NearestNeigh{
             Collections.sort(points, BYDIM);
             sortedPoints.addAll(points);
         }
-        
+
+        // Check number of remaining points. If none or one, stop recursing.
         if (sortedPoints.isEmpty()){
-            return null;
+            System.out.println("NULL");
+            return null; 
         }
+        if (sortedPoints.size() == 1){
+            currNode.point = sortedPoints.get(0);
+            System.out.println("LEVEL:" + level + " POINT: " + currNode.point);
+            return currNode;
+        }
+
         median = findMedian(sortedPoints); 
         
         // construct a node for the median point 
         currNode = buildNode(sortedPoints.get(median)); 
+        
         if (currNode != null){
             System.out.println("LEVEL:" + level + " POINT: " + currNode.point);
         }
-        leftChild = null; 
-        rightChild = null; 
-        
+
         // Check if there is a left partition (indexing starts at 0).  If so, recursively partition it
         if (median > 0) {
-            
+
+            System.out.print("LEFTCHILD: ");
+
             // Invert boolean value (effectively changing the dimension we split on next) 
-            leftChild = buildTree(sortedPoints.subList(0,median-1), !bXDim, level); 
+            leftChild = buildTree(sortedPoints.subList(0,median-1), !bXDim, level);
+            // if (leftChild != null){
+            //     System.out.println("LEVEL:" + level + " LEFTCHILD: " + leftChild.point.id);
+            // }
         }
         // check if there is a right partition 
         if (median < (points.size()-1)){
+            
+            System.out.print("RIGHTCHILD: ");
+
             // Invert the boolean value (effectively changing the dimension we split on next) 
             rightChild = buildTree(sortedPoints.subList(median+1,(points.size()-1)), !bXDim, level); 
+            // if (rightChild != null){
+            //     System.out.println("LEVEL:" + level + " RIGHTCHILD: " + rightChild.point.id);
+            // }
+
         } 
          
         if (leftChild != null){
@@ -103,6 +127,11 @@ public class KDTreeNN implements NearestNeigh{
             currNode.setRight(rightChild);
             rightChild.setParent(currNode);
         }
+        
+        // if (currNode.parent != null){
+        //     System.out.println("PARENT: " + currNode.parent.point.id);
+        // }
+
         return currNode;
     }
  

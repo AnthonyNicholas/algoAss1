@@ -16,8 +16,12 @@ public class Node {
     public Node rightChild = null;     // right child
     
     /**
-     * Constructor
+     * Constructors
      */
+    public Node() {
+        this.point = null;
+    }
+
     public Node(Point point) {
         this.point = point;
     }

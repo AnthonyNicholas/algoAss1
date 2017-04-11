@@ -48,7 +48,10 @@ public class KDTreeNN implements NearestNeigh{
         // eTree.root = buildTree(ePoints, true, 0);
         // hTree.root = buildTree(hPoints, true, 0);
 
-        rTree.printTree(rTree.root, "");
+        // rTree.printTree(rTree.root, "");
+        // rTree.asciiPrint();
+        TreePrinter tp = new TreePrinter();
+        tp.print(rTree.root);
 
     }
     

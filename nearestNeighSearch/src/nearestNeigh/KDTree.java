@@ -36,5 +36,14 @@ public class KDTree {
     
     return;
     }
+    
+    /**
+     * Print out tree in ascii text.
+     */
+    public void asciiPrint() {
+        AsciiPrinter.printNode(root);
+        return;
+    } // end of printAscii()
+
 
 } // end of class KdTree

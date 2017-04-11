@@ -123,7 +123,58 @@ public class KDTreeNN implements NearestNeigh{
     public List<Point> search(Point searchTerm, int k) {
  
         List<Point> searchResults = new ArrayList<Point>();
-        
+        Node closestNode = null;
+        Node currentNode = rTree.root;
+        Node previousNode = null;
+        Boolean xAxis = true;
+
+        // Find the closest leaf
+        while (currentNode != null) {
+            previousNode = currentNode;
+            // Compare the correct point depending on the x/y split
+            double currentPoint = (xAxis ? currentNode.point.lat : currentNode.point.lon);
+            double searchPoint = (xAxis ? searchTerm.lat : searchTerm.lon);
+
+            if (currentPoint < searchPoint) {
+                // Go left if the x/y value is less than that of the search term
+                currentNode = currentNode.leftChild;
+            }
+            else {
+                // Otherwise go right.
+                currentNode = currentNode.rightChild;
+            }
+            // Flip our axis boolean so we compare the correct values next time
+            xAxis = !xAxis;
+        }
+
+        // When we get to a null node, the previous node is our leaf!
+        closestNode = previousNode;
+        currentNode = previousNode;
+
+        previousNode = currentNode.parent;
+
+        // Move back up the tree, comparing against the splitting line
+        while (currentNode != null) {
+            xAxis = !xAxis; // reflip our axis bool as we move back up the tree.
+
+            // If the current node is closer, set it as the closest node.
+            if (closestNode.point.distTo(searchTerm) < currentNode.point.distTo(searchTerm)) {
+                closestNode = currentNode;
+            }
+
+            // Check to see if we need to search the other branch of the current node.
+            Point linePoint = new Point(); // This point will represent the closest possible point on the dividing line to the searchTerm
+            linePoint.lat = (xAxis ? currentNode.point.lat : searchTerm.lat);
+            linePoint.lon = (!xAxis ? currentNode.point.lon : searchTerm.lon);
+
+            if (linePoint.distTo(searchTerm) < currentNode.point.distTo(searchTerm)) {
+                // We need to search the other branch.
+                // implement.
+            }
+        }
+
+        // Need to find a way to return multiple points. at the moment this will only return the closest point found.
+        searchResults.add(closestNode.point);
         return searchResults;
     }
 

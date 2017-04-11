@@ -43,13 +43,12 @@ public class KDTreeNN implements NearestNeigh{
         }
 
         rTree.root = buildTree(rPoints, true, 0);
-        // rTree.printTree(rTree.root, 0);
-        // System.out.println(rTree.root.rightChild.point);
-        // eTree.root = buildTree(ePoints, true, 0);
-        // hTree.root = buildTree(hPoints, true, 0);
+        eTree.root = buildTree(ePoints, true, 0);
+        hTree.root = buildTree(hPoints, true, 0);
 
-        rTree.printTree(rTree.root, "");
-
+        // rTree.printTree(rTree.root, "");
+        
+        return;
     }
     
     
@@ -79,7 +78,7 @@ public class KDTreeNN implements NearestNeigh{
 
         // Check number of remaining points. If none or one, stop recursing.
         if (sortedPoints.isEmpty()){
-            System.out.println("NULL");
+            // System.out.println("NULL");
             return null; 
         }
 
@@ -122,6 +121,8 @@ public class KDTreeNN implements NearestNeigh{
     @Override
     public List<Point> search(Point searchTerm, int k) {
  
+        System.out.println("SEARCHING FOR " + k + " POINTS AROUND " + searchTerm.toString());
+        
         List<Point> searchResults = new ArrayList<Point>();
         Node closestNode = null;
         Node currentNode = rTree.root;
@@ -187,6 +188,8 @@ public class KDTreeNN implements NearestNeigh{
     @Override
     public boolean addPoint(Point point) {
 
+        System.out.println("ADDING POINT: " + point.toString());
+
         if (isPointIn(point)){
             return false;
         }
@@ -199,9 +202,9 @@ public class KDTreeNN implements NearestNeigh{
         // Add node to tree in right position
         addNode(addNode, tree.root, null, true);
         
-        System.out.println("");
-        System.out.println("TREE AFTER ADDITION ");
-        tree.printTree(tree.root, "");
+        // System.out.println("");
+        // System.out.println("TREE AFTER ADDITION ");
+        // tree.printTree(tree.root, "");
 
         return true;
     }
@@ -217,6 +220,10 @@ public class KDTreeNN implements NearestNeigh{
     @Override
     public boolean deletePoint(Point point) {
         
+        if (!isPointIn(point)){
+            return false;
+        }
+        
         System.out.println("DELETING POINT: " + point.toString());
         List<Point> childList = new ArrayList<Point>(); //When we delete, need to build child tree again suign this list
         Node parent = null;
@@ -227,26 +234,28 @@ public class KDTreeNN implements NearestNeigh{
         parent = deletedNode.parent;
         
         childList = treeToList(deletedNode); //Generate list from current child tree of deletedNode
-        if (parent == null){
+        
+        if (parent == null){ // deletedNode was root of KDTree
             tree.root = buildTree(childList, true, 0);
         }
-        
-        if (parent.leftChild.point.equals(deletedNode.point)){
-            // join new tree as leftChild of parent
-            parent.leftChild = buildTree(childList, true,0);
-            parent.leftChild.parent = parent;
-        }
-        else{
-            // join new tree as rightChild of parent
-            parent.rightChild = buildTree(childList, true,0);
-            parent.rightChild.parent = parent;
+        else {
+            if (parent.leftChild.point.equals(deletedNode.point)){
+                // join new tree as leftChild of parent
+                parent.leftChild = buildTree(childList, true,0);
+                parent.leftChild.parent = parent;
+            }
+            else{
+                // join new tree as rightChild of parent
+                parent.rightChild = buildTree(childList, true,0);
+                parent.rightChild.parent = parent;
+            }
         }
         
         System.out.println("");
         System.out.println("TREE AFTER DELETION ");
-        tree.printTree(tree.root, "");
+        // tree.printTree(tree.root, "");
 
-        return true; // To be implemented.
+        return true;
 
     }
 
@@ -273,12 +282,6 @@ public class KDTreeNN implements NearestNeigh{
         return list;
     }
 
-   /**
-     * determines whether point is in KDTree
-     * @param searchPoint to be found
-     * @return true if successful, false if not.
-     */
-
     /**
      * isPointIn function - tests whether given point is in KDTree. 
      * @param point to be checked.
@@ -287,7 +290,9 @@ public class KDTreeNN implements NearestNeigh{
 
     @Override
     public boolean isPointIn(Point point) {
-
+        
+        System.out.println("CHECKING POINT: " + point.toString());
+        
         KDTree tree = getCatTree(point);
 
         Node foundNode = getNodeFromTree(point, tree.root, true);

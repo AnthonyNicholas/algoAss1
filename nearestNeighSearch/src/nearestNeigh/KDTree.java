@@ -20,19 +20,32 @@ public class KDTree {
         this.size = 0;
     }
 
+ /**
+     * Prints KDTree 
+     */
+    
+    public void printTree(Node currNode, String path) {
+
+    System.out.println();
+    printTreeRecursion(currNode, path);
+    System.out.println();
+
+    return;
+    }
+
     /**
      * Recursively prints KDTree
      */
     
-    public void printTree(Node currNode, String path) {
+    public void printTreeRecursion(Node currNode, String path) {
 
     if (currNode == null){
         return;
     }
 
     System.out.println("PATH: " + path + " " + currNode.point.toString());
-    printTree(currNode.leftChild, path + 'l');
-    printTree(currNode.rightChild, path + 'r');    
+    printTreeRecursion(currNode.leftChild, path + 'l');
+    printTreeRecursion(currNode.rightChild, path + 'r');    
     
     return;
     }

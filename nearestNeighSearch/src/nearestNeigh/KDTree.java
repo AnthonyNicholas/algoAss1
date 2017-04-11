@@ -24,17 +24,15 @@ public class KDTree {
      * Recursively prints KDTree
      */
     
-    public void printTree(Node currNode, int level) {
-    level = level + 1;
-    
+    public void printTree(Node currNode, String path) {
+
     if (currNode == null){
         return;
     }
-    System.out.print("*");
-    System.out.println("Level =" + level + currNode.point.toString());
-    System.out.print("---");
-    printTree(currNode.leftChild, level);
-    printTree(currNode.rightChild, level);    
+
+    System.out.println("PATH: " + path + " " + currNode.point.toString());
+    printTree(currNode.leftChild, path + 'l');
+    printTree(currNode.rightChild, path + 'r');    
     
     return;
     }

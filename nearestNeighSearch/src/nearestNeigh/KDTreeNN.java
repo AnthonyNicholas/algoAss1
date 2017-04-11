@@ -48,6 +48,8 @@ public class KDTreeNN implements NearestNeigh{
         // eTree.root = buildTree(ePoints, true, 0);
         // hTree.root = buildTree(hPoints, true, 0);
 
+        rTree.printTree(rTree.root, "");
+
     }
     
     
@@ -80,41 +82,25 @@ public class KDTreeNN implements NearestNeigh{
             System.out.println("NULL");
             return null; 
         }
-        // if (sortedPoints.size() == 1){
-        //     currNode.point = sortedPoints.get(0);
-        //     System.out.println("LEVEL:" + level + " POINT: " + currNode.point);
-        //     return currNode;
-        // }
 
         median = findMedian(sortedPoints); 
         
         // construct a node for the median point 
         currNode = buildNode(sortedPoints.get(median)); 
         
-        if (currNode != null){
-            System.out.println("LEVEL:" + level + " POINT: " + currNode.point + " sortedPoints.size(): " + sortedPoints.size());
-        }
-
         // Check if there is a left partition (indexing starts at 0).  If so, recursively partition it
         if (median > 0) {
-
-            System.out.print("LEFTCHILD: ");
 
             // Invert boolean value (effectively changing the dimension we split on next) 
             leftChild = buildTree(sortedPoints.subList(0,median), !bXDim, level);
             currNode.setLeft(leftChild);
-            System.out.println("Point " + currNode.point.id + " leftchild is " + currNode.leftChild.point.id);
         }
         // check if there is a right partition 
         if (median < (sortedPoints.size()-1)){
             
-            System.out.print("RIGHTCHILD: ");
-
             // Invert the boolean value (effectively changing the dimension we split on next) 
             rightChild = buildTree(sortedPoints.subList(median+1,sortedPoints.size()), !bXDim, level); 
             currNode.setRight(rightChild);
-            System.out.println("Point " + currNode.point.id + " rightchild is " + currNode.rightChild.point.id);
-
         }        
          
         if (leftChild != null){
@@ -124,10 +110,6 @@ public class KDTreeNN implements NearestNeigh{
             rightChild.setParent(currNode);
         }
         
-        // if (currNode.parent != null){
-        //     System.out.println("PARENT: " + currNode.parent.point.id);
-        // }
-
         return currNode;
     }
  
@@ -137,24 +119,27 @@ public class KDTreeNN implements NearestNeigh{
  
         List<Point> searchResults = new ArrayList<Point>();
         
-        // Node closestNode = getClosestNode(searchTerm, tree.root, null, true);
-
-        // return searchResults;
-        
         return searchResults;
     }
 
     @Override
     public boolean addPoint(Point point) {
-        // Check whether point already in tree
+
         if (isPointIn(point)){
             return false;
         }
-
+        
+        // Get the KDTree for the category which point is in
+        KDTree tree = getCatTree(point);
+        
         Node addNode = new Node(point); // CHECK - MAKE CONSTRUCTOR ACCEPT POINT
 
         // Add node to tree in right position
-        addNode(addNode, rTree.root, null, true); 
+        addNode(addNode, tree.root, null, true);
+        
+        System.out.println("");
+        System.out.println("TREE AFTER ADDITION ");
+        tree.printTree(tree.root, "");
 
         return true;
     }
@@ -168,13 +153,13 @@ public class KDTreeNN implements NearestNeigh{
     @Override
     public boolean deletePoint(Point point) {
         
+        System.out.println("DELETING POINT: " + point.toString());
         List<Point> childList = new ArrayList<Point>(); //When we delete, need to build child tree again suign this list
         Node parent = null;
         KDTree tree = null;
         
         if (point.cat.equals(Category.RESTAURANT)){
             tree = rTree;
-            System.out.print(tree.root.point.lat);
         }
         if (point.cat.equals(Category.EDUCATION)){
             tree = eTree;
@@ -182,12 +167,6 @@ public class KDTreeNN implements NearestNeigh{
         if (point.cat.equals(Category.HOSPITAL)){
             tree = hTree;
         }
-        
-        // if (isPointIn(point) == false){
-        //     return false;
-        // }
-        
-        System.out.println(getNodeFromTree(point, tree.root, true).point);
         
         Node deletedNode = getNodeFromTree(point, tree.root, true);
         parent = deletedNode.parent;
@@ -208,6 +187,10 @@ public class KDTreeNN implements NearestNeigh{
             parent.rightChild.parent = parent;
         }
         
+        System.out.println("");
+        System.out.println("TREE AFTER DELETION ");
+        tree.printTree(tree.root, "");
+
         return true; // To be implemented.
 
     }
@@ -401,6 +384,25 @@ public class KDTreeNN implements NearestNeigh{
         return newNode;
 
     }
+    
+    public KDTree getCatTree(Point point) {
+        // Check whether point already in tree
+
+        KDTree tree = new KDTree();
+        
+        if (point.cat.equals(Category.RESTAURANT)){
+            tree = rTree;
+        }
+        if (point.cat.equals(Category.EDUCATION)){
+            tree = eTree;
+        }
+        if (point.cat.equals(Category.HOSPITAL)){
+            tree = hTree;
+        }
+
+        return tree;
+    }
+    
     
     // Comparator for Points by X dimension.
 

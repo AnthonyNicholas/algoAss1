@@ -113,6 +113,11 @@ public class KDTreeNN implements NearestNeigh{
         return currNode;
     }
  
+     /**
+     * search function - searches for k points closest to a given point - searchTerm.
+     * @param searchTerm - point around which we are searching.
+     * @return list of k nearest points
+     */
 
     @Override
     public List<Point> search(Point searchTerm, int k) {
@@ -121,6 +126,12 @@ public class KDTreeNN implements NearestNeigh{
         
         return searchResults;
     }
+
+     /**
+     * addPoint function - adds a point to KDTree of the category of the point.
+     * @param point to be added.
+     * @return boolean - true if point successfully added.
+     */
 
     @Override
     public boolean addPoint(Point point) {
@@ -144,11 +155,13 @@ public class KDTreeNN implements NearestNeigh{
         return true;
     }
 
-
-    //How to delete - JChan answer - A: First, find node that 
-    //holds the point being deleted.  Call this node D.  Get all children of node D.
-    // Delete node D, and construct new subtree from the children of node D.  Get 
-    // the root of this new subtree, and this takes the (former) position of node D.  
+     /**
+     * deletePoint function - deletes a point - note how to delete - JChan answer - A: First, find node that holds 
+     * the point being deleted.  Call this node D.  Get all children of node D. Delete node D, and construct new 
+     * subtree from the children of node D.  Get the root of this new subtree, and this takes the (former) position of node D. 
+     * @param point to be deleted.
+     * @return boolean - true if point successfully deleted.
+     */
 
     @Override
     public boolean deletePoint(Point point) {
@@ -156,17 +169,8 @@ public class KDTreeNN implements NearestNeigh{
         System.out.println("DELETING POINT: " + point.toString());
         List<Point> childList = new ArrayList<Point>(); //When we delete, need to build child tree again suign this list
         Node parent = null;
-        KDTree tree = null;
         
-        if (point.cat.equals(Category.RESTAURANT)){
-            tree = rTree;
-        }
-        if (point.cat.equals(Category.EDUCATION)){
-            tree = eTree;
-        }
-        if (point.cat.equals(Category.HOSPITAL)){
-            tree = hTree;
-        }
+        KDTree tree = getCatTree(point);
         
         Node deletedNode = getNodeFromTree(point, tree.root, true);
         parent = deletedNode.parent;
@@ -195,10 +199,11 @@ public class KDTreeNN implements NearestNeigh{
 
     }
 
-   /**
-     * given a root, traverses all nodes under root and returns as an arrayList
-     * @param searchPoint to be found
-     * @return true if successful, false if not.
+    /**
+     * treeToList function - helper for deletePoint function.  Makes a list containing all points in subtree
+     * below a given point. 
+     * @param point that is root of subtree.
+     * @return list containing all points in subtree below given point.
      */
 
     public List<Point> treeToList(Node root) {
@@ -223,10 +228,18 @@ public class KDTreeNN implements NearestNeigh{
      * @return true if successful, false if not.
      */
 
+    /**
+     * isPointIn function - tests whether given point is in KDTree. 
+     * @param point to be checked.
+     * @return true if point is in KDTree, false otherwise.
+     */
+
     @Override
     public boolean isPointIn(Point point) {
 
-        Node foundNode = getNodeFromTree(point, rTree.root, true);
+        KDTree tree = getCatTree(point);
+
+        Node foundNode = getNodeFromTree(point, tree.root, true);
         
         if (foundNode == null){
             return false;
@@ -279,11 +292,10 @@ public class KDTreeNN implements NearestNeigh{
     }
 
    /**
-     * retrieves node below which the new point (addPoint) should be added
-     * @param addPoint to be added, currNode (= rootNode of KDTree initially), currParent (=null initially) and bXDim - (set to true initially)
-     * @return 
+     * adds node to KDTree of the same category of the point.
+     * @param addNode to be added, currNode (= rootNode of KDTree initially), currParent (=null initially) and bXDim - (set to true initially)
+     * @return true if successfully added, false otherwise
      */
-
 
     public boolean addNode(Node addNode, Node currNode, Node currParent, boolean bXDim) {
 
@@ -368,6 +380,12 @@ public class KDTreeNN implements NearestNeigh{
         return getClosestNode(searchTerm, currNode, currParent, bXDim);
     }
 
+   /**
+     * findMedian - finds index of the median point in list of points.
+     * @param list of points
+     * @return index of the median point
+     */
+
     private int findMedian(List<Point> sortedPoints) {
         
         if (sortedPoints.size() == 0){
@@ -378,12 +396,24 @@ public class KDTreeNN implements NearestNeigh{
         
     }
 
+   /**
+     * buildNode - given a point, returns a new node containing that point.
+     * @param list of points
+     * @return index of the median point
+     */
+
     private Node buildNode(Point medianPoint) {
     
         Node newNode = new Node(medianPoint);
         return newNode;
 
     }
+    
+      /**
+     * getCatTree - retrieves KDTree of the category of given point.
+     * @param point
+     * @return KDTree with same category
+     */
     
     public KDTree getCatTree(Point point) {
         // Check whether point already in tree
@@ -402,7 +432,6 @@ public class KDTreeNN implements NearestNeigh{
 
         return tree;
     }
-    
     
     // Comparator for Points by X dimension.
 

@@ -120,16 +120,51 @@ public class KDTreeNN implements NearestNeigh{
 
     @Override
     public List<Point> search(Point searchTerm, int k) {
- 
+
         System.out.println("SEARCHING FOR " + k + " POINTS AROUND " + searchTerm.toString());
+
+        // Get the KDTree matching the category of the point
+        KDTree tree = getCatTree(point);
         
         List<Point> searchResults = new ArrayList<Point>();
+        Node firstLeafNode = null;
         Node closestNode = null;
-        Node currentNode = rTree.root;
-        Node previousNode = null;
+        Node currentNode = tree.root;
         Boolean xAxis = true;
 
         // Find the closest leaf
+        
+        firstLeafNode = findClosestLeaf(currentNode, searchTerm, xAxis);
+        closestNode = firstLeafNode;
+        searchResults.add(closestNode.point); // add the initial closest leaf to our results
+
+        // Move back up the tree, checking for closer nodes
+
+        closestNode = unwindAndCheckIfCloser(firstLeafNode, closestNode, searchTerm, xAxis);
+
+        // Add other closestNode to searchResults.
+        searchResults.add(closestNode.point);
+        
+        // sort searchResults into order of distance from searchTerm
+        Collections.sort(searchResults, new DistComparator(searchTerm)); 
+
+        searchResults = searchResults.subList(0,k);
+        
+        return searchResults;
+    }
+
+    /**
+     * findClosestLeaf function - given starting node, finds closest leaf to point searchTerm. 
+     * @param startNode, Point searchTerm, Boolean xAxis.
+     * @return Node which is the closest leaf in KDTree
+     */
+
+    public Node findClosestLeaf(Node startNode, Point searchTerm, Boolean xAxis) {
+        
+        Node leafNode = null;
+        Node currentNode = startNode;
+        Node previousNode = null;
+
         while (currentNode != null) {
             previousNode = currentNode;
             // Compare the correct point depending on the x/y split
@@ -149,34 +184,66 @@ public class KDTreeNN implements NearestNeigh{
         }
 
         // When we get to a null node, the previous node is our leaf!
-        closestNode = previousNode;
-        currentNode = previousNode;
+        leafNode = previousNode;
+        searchResults.add(leafNode.point);
 
-        previousNode = currentNode.parent;
+        return leafNode;
+    }
 
-        // Move back up the tree, comparing against the splitting line
+    /**
+     * unwindAndCheckIfCloser function - given starting leaf, retraces path up KDTree checking whether there
+     * are any nodes closer than current closest node. 
+     * @param startNode, Point searchTerm, Boolean xAxis.
+     * @return Node which is the closest leaf in KDTree
+     */
+
+    public Node unwindAndCheckIfCloser(Node leaf, Node closestNode, Point searchTerm, Boolean xAxis) {
+
+        Node newLeafNode = null;
+        Node usedChildNode = null;
+        Node currentNode = leaf;
+        
         while (currentNode != null) {
             xAxis = !xAxis; // reflip our axis bool as we move back up the tree.
-
+            
+            usedChildNode = currentNode;
+            currentNode = currentNode.parent;
+    
             // If the current node is closer, set it as the closest node.
-            if (closestNode.point.distTo(searchTerm) < currentNode.point.distTo(searchTerm)) {
-                closestNode = currentNode;
-            }
+            if (closestNode.point.distTo(searchTerm) > currentNode.point.distTo(searchTerm)) {
 
-            // Check to see if we need to search the other branch of the current node.
-            Point linePoint = new Point(); // This point will represent the closest possible point on the dividing line to the searchTerm
-            linePoint.lat = (xAxis ? currentNode.point.lat : searchTerm.lat);
-            linePoint.lon = (!xAxis ? currentNode.point.lon : searchTerm.lon);
+                closestNode = currentNode; 
+                searchResults.add(currentNode.point);
 
-            if (linePoint.distTo(searchTerm) < currentNode.point.distTo(searchTerm)) {
-                // We need to search the other branch.
-                // implement.
+                // Go down the unexplored branch
+                currentNode = getUnusedChild(closestNode, usedChildNode);
+                newLeafNode = findClosestLeaf(currentNode, searchTerm, xAxis);
+                // Recursively continue down unexplored branches
+                closestNode = unwindAndCheckIfCloser(newLeafNode, closestNode, searchTerm, xAxis);
             }
         }
-
-        // Need to find a way to return multiple points. at the moment this will only return the closest point found.
         searchResults.add(closestNode.point);
-        return searchResults;
+
+        return closestNode;
+    }
+
+    /**
+     * getUnusedChild function - returns the other Node which has not previously been explored. 
+     * @param Current closest Node & the used ChildNode.
+     * @return The other child node.
+     */
+
+    public Node getUnusedChild(Node closestNode, Node usedChildNode) {
+        
+        Node otherChildNode = null;
+        
+        if (closestNode.rightChild.point.equals(usedChildNode.point)){
+            otherChildNode = closestNode.leftChild;
+        } 
+        else{
+            otherChildNode = closestNode.rightChild;
+        }
+        return otherChildNode;
     }
 
      /**
@@ -504,7 +571,6 @@ public class KDTreeNN implements NearestNeigh{
             return Double.compare(p1.lon, p2.lon);
         }
     };
-
 
 
 }

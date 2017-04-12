@@ -8,7 +8,7 @@ import static nearestNeigh.Category.*;
  *
  * @author Jeffrey, Youhan
  */
-public class Node {
+public class Node implements PrintableNode {
 
     public Point point = null; // Each node stores one point
     public Node parent = null; // parent - because I think in our search we need to be able to go up and down the tree
@@ -47,7 +47,22 @@ public class Node {
         return;
     }
 
+   /** Get left child */
+    public PrintableNode getLeft(){
+        return this.leftChild;   
+    }
 
+
+    /** Get right child */
+    public PrintableNode getRight(){
+        return this.rightChild; 
+    }
+
+
+    /** Get text to be printed */
+    public String getText(){
+        return this.point.id;
+    }
 
 
 } // end of class Node

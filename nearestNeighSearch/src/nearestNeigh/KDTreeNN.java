@@ -14,7 +14,6 @@ public class KDTreeNN implements NearestNeigh{
     private KDTree rTree = new KDTree(); // Stores root node for restaurant KDTree & is accessible to all methods
     private KDTree eTree = new KDTree(); // Stores root node for eduction KDTree & is accessible to all methods
     private KDTree hTree = new KDTree(); // Stores root node for hospital KDTree & is accessible to all methods
-    private List<Point> searchResults = new ArrayList<Point>(); //stores searchResults & is reset for each search
     private List<Point> storedPoints = new ArrayList<Point>();
 
 
@@ -125,59 +124,56 @@ public class KDTreeNN implements NearestNeigh{
      */
 
     @Override
-    public List<Point> search(Point searchTerm, int k) {
+     public List<Point> search(Point searchTerm, int k) {
 
         System.out.println("SEARCHING FOR " + k + " POINTS AROUND " + searchTerm.toString());
 
+        SearchObject sObj = new SearchObject(k, searchTerm); // allows us to pass around k, searchTerm and searchResults
+        sObj.searchResults.clear(); // empties any previous results stored in searchResults 
+
+        Node leftLeafNode, rightLeafNode = null;
+        Node closestNode = null;
+        BooleanObject bObj = new BooleanObject(false); // because our searches start with the left and right children of tree.root
+        Node usedChildNode = null;
+        
         // Get the KDTree matching the category of the point
         KDTree tree = getCatTree(searchTerm);
-        
-        searchResults.clear(); // empties any previous results stored in searchResults 
-        Node firstLeafNode = null;
-        Node closestNode = null;
-        Node currentNode = tree.root;
-        BooleanObject bObj = new BooleanObject(true); // creating Boolean Obj so we can pass boolean by reference
+        sObj.addToSearchResults(tree.root.point);
 
-        // Find the closest leaf
-        
-        firstLeafNode = findClosestLeaf(currentNode, searchTerm, bObj);
-        System.out.println("Firstleaf: " + firstLeafNode.point.id + " " + bObj.xAxis);
-        closestNode = firstLeafNode;
+        // RIGHT SIDE OF TREE      
 
-        if (!searchResults.contains(closestNode.point)){
-            searchResults.add(closestNode.point); // add the initial closest leaf to our results
-        }
+        // Go down right side to closest leaf
+        rightLeafNode = findClosestLeaf(tree.root.rightChild, bObj, sObj);
+        sObj.addToSearchResults(rightLeafNode.point);
+
+        System.out.println("RightLeaf: " + rightLeafNode.point.id + " " + bObj.xAxis);
 
         // Move back up the tree, checking for closer nodes
+        unwindAndCheckIfCloser(rightLeafNode, bObj, sObj);
 
-        closestNode = unwindAndCheckIfCloser(firstLeafNode, closestNode, searchTerm, bObj);
+        // LEFT SIDE OF TREE
+        // Go down left side to closest leaf
+        bObj.xAxis = false;
+        leftLeafNode = findClosestLeaf(tree.root.leftChild, bObj, sObj);
+        sObj.addToSearchResults(leftLeafNode.point);
+        System.out.println("LeftLeaf: " + leftLeafNode.point.id + " " + bObj.xAxis);
 
-        // Add other closestNode to searchResults.
-        
-        if (!searchResults.contains(closestNode.point)){
-            searchResults.add(closestNode.point);
-        }
+        // Move back up the tree, checking for closer nodes
+        unwindAndCheckIfCloser(leftLeafNode, bObj, sObj);
 
-        // sort searchResults into order of distance from searchTerm
-        Collections.sort(searchResults, new DistComparator(searchTerm)); 
+        // sort searchResults into order of distance from searchTerm (also trims and updates kClosestPoint)
+        sObj.sortResults();
+        sObj.printResults();
 
-        // searchResults = searchResults.subList(0,k);
-        
-        System.out.println("DISTANCES OF ALL SEARCHRESULTS");
-        // Check that searchResults are arranged closest to furthest - they are
-        for (Point point:searchResults){
+        Collections.sort(storedPoints, new DistComparator(searchTerm));
+
+        System.out.println();
+        System.out.println("DISTANCES OF ALL POINTS");
+        for (Point point:storedPoints){
             System.out.println(point.id + ": " + point.distTo(searchTerm));
         }
         
-        // Collections.sort(storedPoints, new DistComparator(searchTerm));
-
-        // System.out.println();
-        // System.out.println("DISTANCES OF ALL POINTS");
-        // for (Point point:storedPoints){
-        //     System.out.println(point.id + ": " + point.distTo(searchTerm));
-        // }
-        
-        return searchResults;
+        return sObj.searchResults;
     }
 
     /**
@@ -186,24 +182,23 @@ public class KDTreeNN implements NearestNeigh{
      * @return Node which is the closest leaf in KDTree
      */
 
-    public Node findClosestLeaf(Node startNode, Point searchTerm, BooleanObject bObj) {
+    public Node findClosestLeaf(Node startNode, BooleanObject bObj, SearchObject sObj) {
         
         Node leafNode = null;
         Node currentNode = startNode;
         Node previousNode = null;
+        
+        //check if already on leaf
+        if (currentNode.leftChild == null && currentNode.rightChild == null){
+            return currentNode;
+        }
 
         while (currentNode != null) {
             previousNode = currentNode;
             
-            // System.out.println("Going down Tree: " + currentNode.point.id + " " + bObj.xAxis);
-            
-            if (!searchResults.contains(currentNode.point)){ //Want to add all points as we traverse the tree to check if wrong results are due to simple missing points
-                searchResults.add(currentNode.point);
-            }
-            
             // Compare the correct point depending on the x/y split
             double currentPoint = (bObj.xAxis ? currentNode.point.lat : currentNode.point.lon);
-            double searchPoint = (bObj.xAxis ? searchTerm.lat : searchTerm.lon);
+            double searchPoint = (bObj.xAxis ? sObj.searchTerm.lat : sObj.searchTerm.lon);
             
             System.out.println("Descending: " + currentNode.point.id + ": " + bObj.xAxis + ", " + currentPoint + " " + searchPoint);
             
@@ -223,10 +218,7 @@ public class KDTreeNN implements NearestNeigh{
         leafNode = previousNode;
         bObj.xAxis = !bObj.xAxis;
         
-        if (!searchResults.contains(leafNode.point)){
-            searchResults.add(leafNode.point);
-        }
-        System.out.println("LeafDistance: " + leafNode.point.distTo(searchTerm));
+        System.out.println("LeafDistance: " + leafNode.point.distTo(sObj.searchTerm));
 
         return leafNode;
     }
@@ -238,69 +230,59 @@ public class KDTreeNN implements NearestNeigh{
      * @return Node which is the closest leaf in KDTree
      */
 
-    public Node unwindAndCheckIfCloser(Node leaf, Node closestNode, Point searchTerm, BooleanObject bObj) {
+    public void unwindAndCheckIfCloser(Node leaf, BooleanObject bObj, SearchObject sObj) {
 
-        bObj.xAxis = !bObj.xAxis; // reflip our axis bool as we move back up the tree.
-        Node currentNode = leaf.parent;
-        Node usedChildNode = leaf;
-        Node newLeafNode = null;
-        KDTree tree = getCatTree(searchTerm);
+        KDTree tree = getCatTree(sObj.searchTerm);
         
-        while (currentNode != null) {
-            
-            if (!searchResults.contains(currentNode.point)){ //Want to add all points as we traverse the tree to check if wrong results are due to simple missing points
-                searchResults.add(currentNode.point);
-            }
-            
+        Node newLeafNode = null;
+        Node usedChildNode = leaf;
+        Node currentNode = leaf.parent; // one up from leaf
+        bObj.xAxis = !bObj.xAxis; // reflip our axis bool as we have moved up one level.
+
+        while (!currentNode.point.equals(tree.root.point)){
+
             System.out.println("Unwinding: " + currentNode.point.id + " " + bObj.xAxis);
             
-            // If the current node is closer, set it as the closest node.
-            if (closestNode.point.distTo(searchTerm) > currentNode.point.distTo(searchTerm)) {
+            // If the current node is closer and hasn't already been visited, record it as a close node and explore other branch.
+            if ((currentNode.point.distTo(sObj.searchTerm) < sObj.kDistance) && !sObj.searchResults.contains(currentNode.point)) {
 
-                closestNode = currentNode; 
-                System.out.println("NewClosest: " + closestNode.point.id + ": " + closestNode.point.distTo(searchTerm) + ": " + bObj.xAxis);
-                
-                if (!searchResults.contains(closestNode.point)){
-                    searchResults.add(closestNode.point);
+                System.out.println("New closeNode: " + currentNode.point.id + ": " + currentNode.point.distTo(sObj.searchTerm) + "vs " + sObj.kDistance);
+                sObj.addToSearchResults(currentNode.point);
+
+                // If currentNode is a leaf, or only has one child, continue
+                if (currentNode.leftChild == null || currentNode.rightChild == null){
+                    break;
                 }
-
+                
                 // Go down the unused child to explore the unexplored branch
-                currentNode = getUnusedChild(closestNode, usedChildNode);
+                currentNode = getUnusedChild(currentNode, usedChildNode);
                 bObj.xAxis = !bObj.xAxis; // flip boolean because we have gone down one level
-                newLeafNode = findClosestLeaf(currentNode, searchTerm, bObj);
+                
+                newLeafNode = findClosestLeaf(currentNode, bObj, sObj);
+                sObj.addToSearchResults(newLeafNode.point);
                 currentNode = newLeafNode;
                 System.out.println("NewLeaf: " + newLeafNode.point.id + " " + bObj.xAxis);
                 
                 // Recursively continue down unexplored branches
-                closestNode = unwindAndCheckIfCloser(newLeafNode, closestNode, searchTerm, bObj);
-                currentNode = tree.root.parent; // when unwind eventually returns, we are at parent of tree.  So may not need while loop.
-                
-                // Check the other branch from root
-                currentNode = getUnusedChild(closestNode, usedChildNode);
-                bObj.xAxis = !bObj.xAxis; // flip boolean because we have gone down one level
-                newLeafNode = findClosestLeaf(currentNode, searchTerm, bObj);
-                System.out.println("NewLeaf: " + newLeafNode.point.id + " " + bObj.xAxis);
-                
-                // Recursively continue down unexplored branches
-                closestNode = unwindAndCheckIfCloser(newLeafNode, closestNode, searchTerm, bObj);
-                currentNode = tree.root.parent; 
+                unwindAndCheckIfCloser(newLeafNode, bObj, sObj);
+
+                // When recursion finishes, will be back at root
+                // currentNode = tree.root;
+                System.out.println("Finished recursion: Current Node: " + currentNode.point.id + " usedChildNode: " + currentNode.point.id + bObj.xAxis);
                 break;
             }
             
-            bObj.xAxis = !bObj.xAxis; // reflip our axis bool as we move back up the tree.
+            sObj.addToSearchResults(currentNode.point);
+            usedChildNode = currentNode;
             currentNode = currentNode.parent;
-            
+            bObj.xAxis = !bObj.xAxis; // reflip our axis bool as we move back up the tree.
         }
         
-        // We are now back at currentNode is now tree.parent (=NULL) 
-        System.out.println("Now at tree.parent");
-        
-        if (!searchResults.contains(closestNode.point)){
-            searchResults.add(closestNode.point);
-        }
+        // Now back at currentNode is now tree.root 
 
-        return closestNode;
+        return;
     }
+
 
     /**
      * getUnusedChild function - returns the other Node which has not previously been explored. 

@@ -48,19 +48,19 @@ public class Node implements PrintableNode {
     }
 
    /** Get left child */
-    PrintableNode getLeft(){
+    public PrintableNode getLeft(){
         return this.leftChild;   
     }
 
 
     /** Get right child */
-    PrintableNode getRight(){
+    public PrintableNode getRight(){
         return this.rightChild; 
     }
 
 
     /** Get text to be printed */
-    String getText(){
+    public String getText(){
         return this.point.id;
     }
 

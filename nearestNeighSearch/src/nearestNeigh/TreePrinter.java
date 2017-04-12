@@ -1,119 +1,127 @@
 package nearestNeigh;
 
-import java.util.*;
-import static nearestNeigh.Category.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
- * Java code to print out binary tree in ASCII.
+ * Binary tree printer
  * 
- * Code obtained from: http://stackoverflow.com/questions/4965335/how-to-print-binary-tree-diagram
- * Author: michal.kreuzman on Stackoverflow
- * Modified: Jeffrey Chan, 2016
+ * @author MightyPork
  */
-public class AsciiPrinter 
+public class TreePrinter
 {
 
-	/**
-	 * Print out tree rooted at 'root'.
-	 */
-    public static void printNode(Node root) {
-        int maxLevel = AsciiPrinter.maxLevel(root);
-
-        printNodeInternal(Collections.singletonList(root), 1, maxLevel);
-    } // end of printNode()
-
     /**
-     * Print out internals of tree.
+     * Print a tree
+     * 
+     * @param root
+     *            tree root node
      */
-    private static void printNodeInternal(List<Node> nodes, int level, int maxLevel) {
-        if (nodes.isEmpty() || AsciiPrinter.isAllElementsNull(nodes))
-            return;
+    public static void print(PrintableNode root)
+    {
+        List<List<String>> lines = new ArrayList<List<String>>();
 
-        int floor = maxLevel - level;
-        int endgeLines = (int) Math.pow(2, (Math.max(floor - 1, 0)));
-        int firstSpaces = (int) Math.pow(2, (floor)) - 1;
-        int betweenSpaces = (int) Math.pow(2, (floor + 1)) - 1;
+        List<PrintableNode> level = new ArrayList<PrintableNode>();
+        List<PrintableNode> next = new ArrayList<PrintableNode>();
 
-        AsciiPrinter.printWhitespaces(firstSpaces);
+        level.add(root);
+        int nn = 1;
 
-        List<Node> newNodes = new ArrayList<Node>();
-        for (Node node : nodes) {
-            if (node != null) {
-                System.out.print(node.point.id.substring(2));
-                newNodes.add(node.leftChild);
-                newNodes.add(node.rightChild);
-            } else {
-                newNodes.add(null);
-                newNodes.add(null);
-                System.out.print(" ");
-            }
+        int widest = 0;
 
-            AsciiPrinter.printWhitespaces(betweenSpaces);
-        }
-        System.out.println("");
+        while (nn != 0) {
+            List<String> line = new ArrayList<String>();
 
-        for (int i = 1; i <= endgeLines; i++) {
-            for (int j = 0; j < nodes.size(); j++) {
-                AsciiPrinter.printWhitespaces(firstSpaces - i);
-                if (nodes.get(j) == null) {
-                    AsciiPrinter.printWhitespaces(endgeLines + endgeLines + i + 1);
-                    continue;
+            nn = 0;
+
+            for (PrintableNode n : level) {
+                if (n == null) {
+                    line.add(null);
+
+                    next.add(null);
+                    next.add(null);
+                } else {
+                    String aa = n.getText();
+                    line.add(aa);
+                    if (aa.length() > widest) widest = aa.length();
+
+                    next.add(n.getLeft());
+                    next.add(n.getRight());
+
+                    if (n.getLeft() != null) nn++;
+                    if (n.getRight() != null) nn++;
                 }
-
-                if (nodes.get(j).leftChild != null)
-                    System.out.print("/");
-                else
-                    AsciiPrinter.printWhitespaces(1);
-
-                AsciiPrinter.printWhitespaces(i + i - 1);
-
-                if (nodes.get(j).rightChild != null)
-                    System.out.print("\\");
-                else
-                    AsciiPrinter.printWhitespaces(1);
-
-                AsciiPrinter.printWhitespaces(endgeLines + endgeLines - i);
             }
 
-            System.out.println("");
+            if (widest % 2 == 1) widest++;
+
+            lines.add(line);
+
+            List<PrintableNode> tmp = level;
+            level = next;
+            next = tmp;
+            next.clear();
         }
 
-        printNodeInternal(newNodes, level + 1, maxLevel);
-    } // end of printNodeInternal()
+        int perpiece = lines.get(lines.size() - 1).size() * (widest + 4);
+        for (int i = 0; i < lines.size(); i++) {
+            List<String> line = lines.get(i);
+            int hpw = (int) Math.floor(perpiece / 2f) - 1;
 
-    
-    /**
-     * Print write spaces.
-     */
-    private static void printWhitespaces(int count) {
-        for (int i = 0; i < count; i++)
-            System.out.print(" ");
-    } // end of printWhitespaces
+            if (i > 0) {
+                for (int j = 0; j < line.size(); j++) {
 
-    
-    /**
-     * Determine maxlevel (height) of tree.
-     */
-    private static int maxLevel(Node node) {
-        if (node == null)
-            return 0;
+                    // split node
+                    char c = ' ';
+                    if (j % 2 == 1) {
+                        if (line.get(j - 1) != null) {
+                            c = (line.get(j) != null) ? '┴' : '┘';
+                        } else {
+                            if (j < line.size() && line.get(j) != null) c = '└';
+                        }
+                    }
+                    System.out.print(c);
 
-        return Math.max(AsciiPrinter.maxLevel(node.leftChild), AsciiPrinter.maxLevel(node.rightChild)) + 1;
-    } // end of maxLevel()
+                    // lines and spaces
+                    if (line.get(j) == null) {
+                        for (int k = 0; k < perpiece - 1; k++) {
+                            System.out.print(" ");
+                        }
+                    } else {
 
-    
-    /**
-     * Check if all elements in list are null.
-     */
-    private static boolean isAllElementsNull(List list) {
-        for (Object object : list) {
-            if (object != null)
-                return false;
+                        for (int k = 0; k < hpw; k++) {
+                            System.out.print(j % 2 == 0 ? " " : "─");
+                        }
+                        System.out.print(j % 2 == 0 ? "┌" : "┐");
+                        for (int k = 0; k < hpw; k++) {
+                            System.out.print(j % 2 == 0 ? "─" : " ");
+                        }
+                    }
+                }
+                System.out.println();
+            }
+
+            // print line of numbers
+            for (int j = 0; j < line.size(); j++) {
+
+                String f = line.get(j);
+                if (f == null) f = "";
+                int gap1 = (int) Math.ceil(perpiece / 2f - f.length() / 2f);
+                int gap2 = (int) Math.floor(perpiece / 2f - f.length() / 2f);
+
+                // a number
+                for (int k = 0; k < gap1; k++) {
+                    System.out.print(" ");
+                }
+                System.out.print(f);
+                for (int k = 0; k < gap2; k++) {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+
+            perpiece /= 2;
         }
-
-        return true;
-    } // end of isAllElementNull()
-
-} // end of class AsciiPrinter
-
+    }
+}

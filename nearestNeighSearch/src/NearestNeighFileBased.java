@@ -105,6 +105,7 @@ public class NearestNeighFileBased {
                         List<Point> searchResult = agent.search(point, k);
                         for (Point writePoint : searchResult) {
                             writer.println(writePoint.toString());
+                            writer.println("Distance: " + writePoint.distTo(point));
                         }
                         break;
                     // add

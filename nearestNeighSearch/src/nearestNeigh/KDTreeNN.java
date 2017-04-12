@@ -43,9 +43,9 @@ public class KDTreeNN implements NearestNeigh{
             }
         }
 
-        rTree.root = buildTree(rPoints, true, 0);
-        eTree.root = buildTree(ePoints, true, 0);
-        hTree.root = buildTree(hPoints, true, 0);
+        rTree.root = buildTree(rPoints, true);
+        eTree.root = buildTree(ePoints, true);
+        hTree.root = buildTree(hPoints, true);
 
         // rTree.printTree(rTree.root, "");
         
@@ -59,13 +59,12 @@ public class KDTreeNN implements NearestNeigh{
      * @return Node that is the root of the tree
      */
 
-    public Node buildTree(List<Point> points, boolean bXDim, int level) { 
+    public Node buildTree(List<Point> points, boolean bXDim) { 
         int median = 0;
         List<Point> sortedPoints = new ArrayList<Point>();
         Node currNode = new Node(); 
         Node leftChild = null; 
         Node rightChild = null;
-        level += 1;
 
         // First sort the list by Dimension and find median
         if (bXDim == true){
@@ -92,14 +91,14 @@ public class KDTreeNN implements NearestNeigh{
         if (median > 0) {
 
             // Invert boolean value (effectively changing the dimension we split on next) 
-            leftChild = buildTree(sortedPoints.subList(0,median), !bXDim, level);
+            leftChild = buildTree(sortedPoints.subList(0,median), !bXDim);
             currNode.setLeft(leftChild);
         }
         // check if there is a right partition 
         if (median < (sortedPoints.size()-1)){
             
             // Invert the boolean value (effectively changing the dimension we split on next) 
-            rightChild = buildTree(sortedPoints.subList(median+1,sortedPoints.size()), !bXDim, level); 
+            rightChild = buildTree(sortedPoints.subList(median+1,sortedPoints.size()), !bXDim); 
             currNode.setRight(rightChild);
         }        
          
@@ -131,18 +130,20 @@ public class KDTreeNN implements NearestNeigh{
         Node firstLeafNode = null;
         Node closestNode = null;
         Node currentNode = tree.root;
-        Boolean xAxis = true;
+        BooleanObject bObj = new BooleanObject(true); // creating Boolean Obj so we can pass boolean by reference
+        // AtomicBoolean xAxis = new AtomicBoolean(true);
+
 
         // Find the closest leaf
         
-        firstLeafNode = findClosestLeaf(currentNode, searchTerm, xAxis);
+        firstLeafNode = findClosestLeaf(currentNode, searchTerm, bObj);
         closestNode = firstLeafNode;
 
         searchResults.add(closestNode.point); // add the initial closest leaf to our results
 
         // Move back up the tree, checking for closer nodes
 
-        closestNode = unwindAndCheckIfCloser(firstLeafNode, closestNode, searchTerm, xAxis);
+        closestNode = unwindAndCheckIfCloser(firstLeafNode, closestNode, searchTerm, bObj);
 
         // Add other closestNode to searchResults.
         
@@ -169,7 +170,7 @@ public class KDTreeNN implements NearestNeigh{
      * @return Node which is the closest leaf in KDTree
      */
 
-    public Node findClosestLeaf(Node startNode, Point searchTerm, Boolean xAxis) {
+    public Node findClosestLeaf(Node startNode, Point searchTerm, BooleanObject bObj) {
         
         Node leafNode = null;
         Node currentNode = startNode;
@@ -183,8 +184,8 @@ public class KDTreeNN implements NearestNeigh{
             }
             
             // Compare the correct point depending on the x/y split
-            double currentPoint = (xAxis ? currentNode.point.lat : currentNode.point.lon);
-            double searchPoint = (xAxis ? searchTerm.lat : searchTerm.lon);
+            double currentPoint = (bObj.xAxis ? currentNode.point.lat : currentNode.point.lon);
+            double searchPoint = (bObj.xAxis ? searchTerm.lat : searchTerm.lon);
 
             if (currentPoint < searchPoint) {
                 // Go left if the x/y value is less than that of the search term
@@ -195,7 +196,7 @@ public class KDTreeNN implements NearestNeigh{
                 currentNode = currentNode.rightChild;
             }
             // Flip our axis boolean so we compare the correct values next time
-            xAxis = !xAxis;
+            bObj.xAxis = !bObj.xAxis;
         }
 
         // When we get to a null node, the previous node is our leaf!
@@ -215,9 +216,9 @@ public class KDTreeNN implements NearestNeigh{
      * @return Node which is the closest leaf in KDTree
      */
 
-    public Node unwindAndCheckIfCloser(Node leaf, Node closestNode, Point searchTerm, Boolean xAxis) {
+    public Node unwindAndCheckIfCloser(Node leaf, Node closestNode, Point searchTerm, BooleanObject bObj) {
 
-        xAxis = !xAxis; // reflip our axis bool as we move back up the tree.
+        bObj.xAxis = !bObj.xAxis; // reflip our axis bool as we move back up the tree.
         Node currentNode = leaf.parent;
         Node usedChildNode = leaf;
         Node newLeafNode = null;
@@ -238,11 +239,11 @@ public class KDTreeNN implements NearestNeigh{
 
                 // Go down the unexplored branch
                 currentNode = getUnusedChild(closestNode, usedChildNode);
-                newLeafNode = findClosestLeaf(currentNode, searchTerm, xAxis);
+                newLeafNode = findClosestLeaf(currentNode, searchTerm, bObj);
                 // Recursively continue down unexplored branches
-                closestNode = unwindAndCheckIfCloser(newLeafNode, closestNode, searchTerm, xAxis);
+                closestNode = unwindAndCheckIfCloser(newLeafNode, closestNode, searchTerm, bObj);
             }
-            xAxis = !xAxis; // reflip our axis bool as we move back up the tree.
+            bObj.xAxis = !bObj.xAxis; // reflip our axis bool as we move back up the tree.
             currentNode = currentNode.parent;
             
         }
@@ -330,17 +331,17 @@ public class KDTreeNN implements NearestNeigh{
         childList = treeToList(deletedNode); //Generate list from current child tree of deletedNode
         
         if (parent == null){ // deletedNode was root of KDTree
-            tree.root = buildTree(childList, true, 0);
+            tree.root = buildTree(childList, true);
         }
         else {
             if (parent.leftChild.point.equals(deletedNode.point)){
                 // join new tree as leftChild of parent
-                parent.leftChild = buildTree(childList, true,0);
+                parent.leftChild = buildTree(childList, true);
                 parent.leftChild.parent = parent;
             }
             else{
                 // join new tree as rightChild of parent
-                parent.rightChild = buildTree(childList, true,0);
+                parent.rightChild = buildTree(childList, true);
                 parent.rightChild.parent = parent;
             }
         }

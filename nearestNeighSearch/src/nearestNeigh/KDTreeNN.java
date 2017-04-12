@@ -137,8 +137,6 @@ public class KDTreeNN implements NearestNeigh{
         Node closestNode = null;
         Node currentNode = tree.root;
         BooleanObject bObj = new BooleanObject(true); // creating Boolean Obj so we can pass boolean by reference
-        // AtomicBoolean xAxis = new AtomicBoolean(true);
-
 
         // Find the closest leaf
         
@@ -146,7 +144,9 @@ public class KDTreeNN implements NearestNeigh{
         System.out.println("Firstleaf: " + firstLeafNode.point.id);
         closestNode = firstLeafNode;
 
-        searchResults.add(closestNode.point); // add the initial closest leaf to our results
+        if (!searchResults.contains(closestNode.point)){
+            searchResults.add(closestNode.point); // add the initial closest leaf to our results
+        }
 
         // Move back up the tree, checking for closer nodes
 
@@ -159,7 +159,7 @@ public class KDTreeNN implements NearestNeigh{
         }
 
         // sort searchResults into order of distance from searchTerm
-        // Collections.sort(searchResults, new DistComparator(searchTerm)); 
+        Collections.sort(searchResults, new DistComparator(searchTerm)); 
 
         // searchResults = searchResults.subList(0,k);
         
@@ -169,13 +169,13 @@ public class KDTreeNN implements NearestNeigh{
             System.out.println(point.id + ": " + point.distTo(searchTerm));
         }
         
-        Collections.sort(storedPoints, new DistComparator(searchTerm));
+        // Collections.sort(storedPoints, new DistComparator(searchTerm));
 
-        System.out.println();
-        System.out.println("DISTANCES OF ALL POINTS");
-        for (Point point:storedPoints){
-            System.out.println(point.id + ": " + point.distTo(searchTerm));
-        }
+        // System.out.println();
+        // System.out.println("DISTANCES OF ALL POINTS");
+        // for (Point point:storedPoints){
+        //     System.out.println(point.id + ": " + point.distTo(searchTerm));
+        // }
         
         return searchResults;
     }
@@ -202,8 +202,10 @@ public class KDTreeNN implements NearestNeigh{
             // Compare the correct point depending on the x/y split
             double currentPoint = (bObj.xAxis ? currentNode.point.lat : currentNode.point.lon);
             double searchPoint = (bObj.xAxis ? searchTerm.lat : searchTerm.lon);
-
-            if (currentPoint < searchPoint) {
+            
+            System.out.println(currentNode.point.id + ": " + bObj.xAxis + ", " + currentPoint + " " + searchPoint);
+            
+            if (searchPoint < currentPoint) {
                 // Go left if the x/y value is less than that of the search term
                 currentNode = currentNode.leftChild;
             }

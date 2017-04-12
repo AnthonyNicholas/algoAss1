@@ -61,7 +61,8 @@ public class Node implements PrintableNode {
 
     /** Get text to be printed */
     public String getText(){
-        return this.point.id;
+        String label = this.point.id + ":" + (int)this.point.lat + "," + (int)this.point.lon;
+        return label;
     }
 
 

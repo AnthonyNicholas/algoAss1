@@ -15,6 +15,7 @@ public class KDTreeNN implements NearestNeigh{
     private KDTree eTree = new KDTree(); // Stores root node for eduction KDTree & is accessible to all methods
     private KDTree hTree = new KDTree(); // Stores root node for hospital KDTree & is accessible to all methods
     private List<Point> searchResults = new ArrayList<Point>(); //stores searchResults & is reset for each search
+    private List<Point> storedPoints = new ArrayList<Point>();
 
 
    /**
@@ -50,7 +51,9 @@ public class KDTreeNN implements NearestNeigh{
         // rTree.printTree(rTree.root, "");
         
         TreePrinter tp = new TreePrinter();
-        tp.print(rTree.root);
+        tp.print(rTree.root); //Allows printout of tree - which looks fine
+        
+        storedPoints = points;
         
         return;
     }
@@ -140,6 +143,7 @@ public class KDTreeNN implements NearestNeigh{
         // Find the closest leaf
         
         firstLeafNode = findClosestLeaf(currentNode, searchTerm, bObj);
+        System.out.println("Firstleaf: " + firstLeafNode.point.id);
         closestNode = firstLeafNode;
 
         searchResults.add(closestNode.point); // add the initial closest leaf to our results
@@ -155,12 +159,21 @@ public class KDTreeNN implements NearestNeigh{
         }
 
         // sort searchResults into order of distance from searchTerm
-        Collections.sort(searchResults, new DistComparator(searchTerm)); 
+        // Collections.sort(searchResults, new DistComparator(searchTerm)); 
 
-        searchResults = searchResults.subList(0,k);
+        // searchResults = searchResults.subList(0,k);
         
+        System.out.println("DISTANCES OF ALL SEARCHRESULTS");
         // Check that searchResults are arranged closest to furthest - they are
         for (Point point:searchResults){
+            System.out.println(point.id + ": " + point.distTo(searchTerm));
+        }
+        
+        Collections.sort(storedPoints, new DistComparator(searchTerm));
+
+        System.out.println();
+        System.out.println("DISTANCES OF ALL POINTS");
+        for (Point point:storedPoints){
             System.out.println(point.id + ": " + point.distTo(searchTerm));
         }
         

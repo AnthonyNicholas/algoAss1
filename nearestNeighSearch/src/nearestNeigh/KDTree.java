@@ -24,13 +24,11 @@ public class KDTree {
      * Prints KDTree 
      */
     
-    public void printTree(Node currNode, String path) {
+    public void print() {
 
-    System.out.println();
-    printTreeRecursion(currNode, path);
-    System.out.println();
-
-    return;
+        TreePrinter tp = new TreePrinter();
+        tp.print(this.root); //Allows printout of tree - which looks fine
+        return;
     }
 
     /**

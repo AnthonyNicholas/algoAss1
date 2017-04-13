@@ -1,10 +1,4 @@
-Point{id=id8, cat=RESTAURANT, lat=8.0, lon=8.0}
-Point{id=id4, cat=RESTAURANT, lat=4.0, lon=12.0}
-Point{id=id2, cat=RESTAURANT, lat=2.0, lon=14.0}
-Point{id=id1, cat=RESTAURANT, lat=1.0, lon=15.0}
-Point{id=id1, cat=RESTAURANT, lat=1.0, lon=15.0}
-Point{id=id3, cat=RESTAURANT, lat=3.0, lon=13.0}
-Point{id=id12, cat=RESTAURANT, lat=12.0, lon=4.0}
-Point{id=id10, cat=RESTAURANT, lat=10.0, lon=6.0}
-Point{id=id9, cat=RESTAURANT, lat=9.0, lon=7.0}
-Point{id=id11, cat=RESTAURANT, lat=11.0, lon=5.0}
+Point{id=id1167, cat=HOSPITAL, lat=-36.4355438275, lon=145.032232726}
+Point{id=id1000, cat=HOSPITAL, lat=-36.5421357563, lon=144.931418298}
+Delete point failed.
+true

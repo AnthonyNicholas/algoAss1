@@ -1,0 +1,89 @@
+                                                     id8:8,8                                                    
+                            ┌───────────────────────────┴───────────────────────────┐                           
+                        id4:4,12                                                id12:12,4                       
+              ┌─────────────┴─────────────┐                           ┌─────────────┴─────────────┐             
+          id6:6,10                    id2:2,14                    id14:14,2                   id10:10,6         
+       ┌──────┴──────┐             ┌──────┴──────┐             ┌──────┴──────┐             ┌──────┴──────┐      
+   id5:5,11       id7:7,9      id1:1,15      id3:3,13      id13:13,3     id15:15,1      id9:9,7      id11:11,5  
+SEARCHING FOR 7 POINTS AROUND Point{id=searchTerm, cat=RESTAURANT, lat=13.0, lon=1.5}
+Adding Search Result: id8rNum: 1
+Current searchResults: id8 
+Descending: id12: false, 4.0 1.5
+Descending: id14: true, 14.0 13.0
+Descending: id13: false, 3.0 1.5
+LeafDistance: 162.5094580987545
+Adding Search Result: id13rNum: 2
+Current searchResults: id8 id13 
+RightLeaf: id13 false
+Unwinding: id14 true
+New closeNode: id14: 123.63404488119158vs 902.0540052488707
+Adding Search Result: id14rNum: 3
+Current searchResults: id13 id8 id14 
+Descending: id15: false, 1.0 1.5
+LeafDistance: 228.82750117045455
+Adding Search Result: id15rNum: 4
+Current searchResults: id14 id13 id8 id15 
+NewLeaf: id15 false
+Unwinding: id14 true
+Unwinding: id12 false
+New closeNode: id12: 293.2748983935626vs 902.0540052488707
+Adding Search Result: id12rNum: 5
+Current searchResults: id14 id13 id15 id8 id12 
+Descending: id10: true, 10.0 13.0
+Descending: id11: false, 5.0 1.5
+LeafDistance: 440.8348680879308
+Adding Search Result: id11rNum: 6
+Current searchResults: id14 id13 id15 id12 id8 id11 
+NewLeaf: id11 false
+Unwinding: id10 true
+New closeNode: id10: 592.9618171257125vs 902.0540052488707
+Adding Search Result: id10rNum: 7
+Current searchResults: id14 id13 id15 id12 id11 id8 id10 
+Descending: id9: false, 7.0 1.5
+LeafDistance: 746.9974915305389
+Adding Search Result: id9rNum: 8
+Current searchResults: id14 id13 id15 id12 id11 id10 id8 id9 
+NewLeaf: id9 false
+Unwinding: id10 true
+Unwinding: id12 false
+Finished recursion: Current Node: id9 usedChildNode: id9true
+Finished recursion: Current Node: id11 usedChildNode: id11true
+Finished recursion: Current Node: id15 usedChildNode: id15true
+Descending: id4: false, 12.0 1.5
+Descending: id6: true, 6.0 13.0
+Descending: id7: false, 9.0 1.5
+LeafDistance: 1057.7452632903653
+Adding Search Result: id7rNum: 9
+Current searchResults: id14 id13 id15 id12 id11 id10 id9 id8 id7 
+LeftLeaf: id7 false
+Unwinding: id6 true
+Adding Search Result: id6rNum: 10
+Current searchResults: id14 id13 id15 id12 id11 id10 id9 id8 id7 id6 
+Unwinding: id4 false
+Adding Search Result: id4rNum: 11
+Current searchResults: id14 id13 id15 id12 id11 id10 id9 id8 id7 id6 id4 
+DISTANCES OF ALL SEARCHRESULTS
+id14: 123.63404488119158
+id13: 162.5094580987545
+id15: 228.82750117045455
+id12: 293.2748983935626
+id11: 440.8348680879308
+id10: 592.9618171257125
+id9: 746.9974915305389
+
+DISTANCES OF ALL POINTS
+id14: 123.63404488119158
+id13: 162.5094580987545
+id15: 228.82750117045455
+id12: 293.2748983935626
+id11: 440.8348680879308
+id10: 592.9618171257125
+id9: 746.9974915305389
+id8: 902.0540052488707
+id7: 1057.7452632903653
+id6: 1213.8699315913234
+id5: 1370.3073747809362
+id4: 1526.9766936509245
+id3: 1683.8183647349197
+id2: 1840.785164152694
+id1: 1997.8373222033174

@@ -65,5 +65,29 @@ public class Node implements PrintableNode {
         return label;
     }
 
+    /**
+     * Equality for a node.
+     * @param obj Object (Node) to compare.
+     * @return True if equal, otherwise false.
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Node other = (Node) obj;
+        if (!this.point.equals(other.point)){
+           return false;
+        }
+        return true;
+    }
+
+
 
 } // end of class Node

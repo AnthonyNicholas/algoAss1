@@ -52,8 +52,8 @@ public class SearchObject {
             if (searchResults.size() > k){
                 searchResults = searchResults.subList(0,k);
             }
-
             rNum = searchResults.size();
+            closestK = rNum >= k ? searchResults.get(k-1) : searchResults.get(rNum-1);
 
             // System.out.println("Adding Search Result: " + closePoint.id + "rNum: " + rNum);
             // System.out.print("Current searchResults: ");
@@ -62,13 +62,28 @@ public class SearchObject {
             // }
             // System.out.println();
 
-            closestK = rNum >= k ? searchResults.get(k-1) : searchResults.get(rNum-1);
             kDistance = closestK.distTo(searchTerm);
 
         }
 
         return;
     }
+    
+        /**
+     * addToSearchResults function - adds closePoint, sorts results and updates kClosestNode & kDistance. 
+     * @param Candidate close Node.
+     * @return kClosestNode.
+     */
+
+    public void addToSearchedPoints(Point point) {
+        
+        if (!searchedPoints.contains(point)) {
+            searchedPoints.add(point); // Marking this leaf as 'searched'.
+        }
+
+        return;
+    }
+    
     
     /**
      * sortResults function - sorts & trims searchResults and updates closestK & kDistance. 

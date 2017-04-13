@@ -11,10 +11,10 @@ import java.util.List;
  */
 public class KDTreeNN implements NearestNeigh{
 
+    // private List<Point> fullSetOfPoints = new ArrayList<Point>();
     private KDTree rTree = new KDTree(); // Stores root node for restaurant KDTree & is accessible to all methods
     private KDTree eTree = new KDTree(); // Stores root node for eduction KDTree & is accessible to all methods
     private KDTree hTree = new KDTree(); // Stores root node for hospital KDTree & is accessible to all methods
-    private List<Point> storedPoints = new ArrayList<Point>();
 
    /**
      * builds kd Trees.  Node we should have a seperate KDTree for each category - RESTAURANT, EDUCATION, HOSPITAL
@@ -30,15 +30,15 @@ public class KDTreeNN implements NearestNeigh{
         List<Point> hPoints = new ArrayList<Point>(); // stores all points in hospital category
 
 
-        for (int i = 0; i < points.size(); i++){
-            if (points.get(i).cat == Category.RESTAURANT){
-                rPoints.add(points.get(i));
+        for (Point p : points){
+            if (p.cat == Category.RESTAURANT){
+                rPoints.add(p);
             }
-            if (points.get(i).cat == Category.EDUCATION){
-                ePoints.add(points.get(i));                
+            if (p.cat == Category.EDUCATION){
+                ePoints.add(p);                
             }
-            if (points.get(i).cat == Category.HOSPITAL){
-                hPoints.add(points.get(i));
+            if (p.cat == Category.HOSPITAL){
+                hPoints.add(p);
             }
         }
 
@@ -48,8 +48,7 @@ public class KDTreeNN implements NearestNeigh{
 
         // rTree.printTree(rTree.root, "");
         // rTree.print(); //Allows printout of tree - which looks fine
-
-        storedPoints = points;
+        // fullSetOfPoints = points;
         
         return;
     }
@@ -86,7 +85,7 @@ public class KDTreeNN implements NearestNeigh{
         median = findMedian(sortedPoints); 
         
         // construct a node for the median point 
-        currNode = buildNode(sortedPoints.get(median)); 
+        currNode = new Node(sortedPoints.get(median)); 
         
         // Check if there is a left partition (indexing starts at 0).  If so, recursively partition it
         if (median > 0) {
@@ -124,16 +123,16 @@ public class KDTreeNN implements NearestNeigh{
 
         System.out.println("SEARCHING FOR " + k + " POINTS AROUND " + searchTerm.toString());
 
-        SearchObject sObj = new SearchObject(k, searchTerm); // allows us to pass around k, searchTerm and searchResults
-        sObj.searchResults.clear(); // empties any previous results stored in searchResults 
-
         // Get the KDTree matching the category of the point
-        KDTree tree = getCatTree(sObj.searchTerm);
+        KDTree tree = getCatTree(searchTerm);
 
+        // sObj stores k, searchTerm, searchResults, searchedPoints, closestK, kDistance and rNum and allows us to pass by reference to diff methods.
+
+        SearchObject sObj = new SearchObject(k, searchTerm); 
         sObj.searchResults.clear(); // empties any previous results stored in searchResults 
         sObj.searchedPoints.clear();
 
-        sObj.printResults(0); // empties any previous results stored in searchResults 
+        // sObj.printResults(0);
 
         Node firstLeafNode = null;
         Node closestNode = null;
@@ -146,9 +145,9 @@ public class KDTreeNN implements NearestNeigh{
         System.out.println("Firstleaf: " + firstLeafNode.point.id);
         closestNode = firstLeafNode;
 
-        sObj.addToSearchResults(closestNode.point); // add the initial closest leaf to our results
+        sObj.addToSearchResults(closestNode.point); // adds initial closest leaf to our results, sorts and trims them.
 
-        sObj.printResults(1); // empties any previous results stored in searchResults 
+        // sObj.printResults(1); // empties any previous results stored in searchResults 
 
         // Move back up the tree, checking for closer nodes
 
@@ -156,7 +155,7 @@ public class KDTreeNN implements NearestNeigh{
 
         // Add other closestNode to searchResults.
         sObj.addToSearchResults(closestNode.point);
-        sObj.printResults(2);
+        // sObj.printResults(2);
 
         return sObj.searchResults;
     }
@@ -176,7 +175,7 @@ public class KDTreeNN implements NearestNeigh{
         while (currentNode != null) {
             previousNode = currentNode;
 
-            sObj.addToSearchResults(currentNode.point);//Want to add all points as we traverse the tree to check if wrong results are due to simple missing points
+            sObj.addToSearchResults(currentNode.point); //Want to add all points as we traverse the tree to check if wrong results are due to simple missing points
 
             // Compare the correct point depending on the x/y split
             double currentPoint = (bObj.xAxis ? currentNode.point.lat : currentNode.point.lon);
@@ -220,14 +219,11 @@ public class KDTreeNN implements NearestNeigh{
 
         while (currentNode != null) {
 
-            if (!sObj.searchedPoints.contains(currentNode.point)) {
-                sObj.searchedPoints.add(currentNode.point); // Marking this leaf as 'searched'.
-            }
+            sObj.addToSearchedPoints(currentNode.point);
 
             // If the current node is closer than the least close node in the search results, replace
             if (sObj.kDistance > currentNode.point.distTo(sObj.searchTerm)) {
-                //System.out.println("New closest node: " + currentNode.point.id + ". Distance: " + currentNode.point.distTo(searchTerm));
-                sObj.addToSearchResults(currentNode.point);
+                sObj.addToSearchResults(currentNode.point); //checks not already in, adds, sorts, trims and updates closestK and kDistance
             }
 
             // Calculate the closest possible point along the line of separation from our search term point
@@ -244,38 +240,27 @@ public class KDTreeNN implements NearestNeigh{
                 if (currentNode.rightChild != null && currentNode.leftChild != null) {
 
                     //System.out.println("Children aren't null");
-
                     currentNode = getUnusedChild(currentNode, usedChildNode);
 
-                    //System.out.println("Child: " + currentNode.point.id);
                     // If the unusedChild hasn't already been searched
                     if (!sObj.searchedPoints.contains(currentNode.point)) {
                         //System.out.println("Unused child hasn't been searched");
                         newLeafNode = findClosestLeaf(currentNode, bObj, sObj);
                         //System.out.println("===== Adding new leaf " + newLeafNode.point.id + " to searched points. =====");
                         sObj.searchedPoints.add(newLeafNode.point); // This caused some infinite looping.
-                        //System.out.println(searchedPoints);
-
-                        //System.out.println("unwinding newLeaf: " + newLeafNode.point.id);
                         // Recursively unwind from new leaf
                         unwindAndCheckIfCloser(newLeafNode, bObj, sObj);
                     }
-                    // else
-                        //System.out.println("Child has already been searched. Continuing.");
 
                     currentNode = currentNode.parent;
                 }
-            }else
-                //System.out.println("Skipping as line point isn't closer than current closest point.");
+            }
              // Update usedChildNode to point at the current node rather than its used child.
             usedChildNode = currentNode;
             bObj.xAxis = !bObj.xAxis; // reflip our axis bool as we move back up the tree.
             currentNode = currentNode.parent;
-            // Collections.sort(searchResults, new DistComparator(searchTerm));
-            // sObj.searchResults = searchResults.subList(0,k);
-            //System.out.println("Search results in sorted order: " + searchResults);
-            return;
         }
+        return;
     }
 
     /**
@@ -287,7 +272,7 @@ public class KDTreeNN implements NearestNeigh{
     public Node getUnusedChild(Node closestNode, Node usedChildNode) {
         //System.out.println("Getting child from: " + closestNode.point.id);
         //System.out.println("Used child: " + usedChildNode.point.id);
-        if (closestNode.rightChild.point.equals(usedChildNode.point)) {
+        if (closestNode.rightChild.equals(usedChildNode)) {
             return closestNode.leftChild;
         }
         return closestNode.rightChild;
@@ -342,16 +327,16 @@ public class KDTreeNN implements NearestNeigh{
         List<Point> childList = new ArrayList<Point>(); //When we delete, need to build child tree again suign this list
         Node parent = null;
         
-        KDTree tree = getCatTree(point);
+        KDTree tree = new KDTree();
+        tree = getCatTree(point);
         // System.out.println("ROOT: " + tree.root.point.toString());
         
-        
-        Node deletedNode = getNodeFromTree(point, tree.root, true);
+        Node deletedNode = tree.getNode(point);
         parent = deletedNode.parent;
 
         // System.out.println("deletedNode: " + deletedNode.point.toString());
         
-        childList = treeToList(deletedNode); //Generate list from current child tree of deletedNode
+        childList = tree.toList(deletedNode); //Generate list from current child tree of deletedNode
         
         if (parent == null){ // deletedNode was root of KDTree
             tree.root = buildTree(childList, true);
@@ -392,28 +377,6 @@ public class KDTreeNN implements NearestNeigh{
 
     }
 
-    /**
-     * treeToList function - helper for deletePoint function.  Makes a list containing all points in subtree
-     * below a given point. 
-     * @param point that is root of subtree.
-     * @return list containing all points in subtree below given point.
-     */
-
-    public List<Point> treeToList(Node root) {
-        
-        List<Point> list = new ArrayList<Point>();
-        Node currNode = root;
-        
-        if (currNode.leftChild != null){
-            list.add(currNode.leftChild.point);
-            list.addAll(treeToList(currNode.leftChild));
-        }
-        if (currNode.rightChild != null){
-            list.add(currNode.rightChild.point);
-            list.addAll(treeToList(currNode.rightChild));
-        }
-        return list;
-    }
 
     /**
      * isPointIn function - tests whether given point is in KDTree. 
@@ -428,57 +391,14 @@ public class KDTreeNN implements NearestNeigh{
         
         KDTree tree = getCatTree(point);
 
-        Node foundNode = getNodeFromTree(point, tree.root, true);
+        Node foundNode = tree.getNode(point);
         
         if (foundNode == null){
             return false;
         }
         
         return true;
-    }
-
-   /**
-     * retrieves node with given point from KDTree
-     * @param searchPoint to be found, rootNode of KDTree, and bXDim - set to true if split on x-dimension first
-     * @return if successful, node with given point.  Null if unsuccessful.
-     */
-
-    public Node getNodeFromTree(Point searchPoint, Node currNode, boolean bXDim) {
-
-        if (searchPoint.equals(currNode.point)){
-            return currNode;
-        }
-
-        //Otherwise go down either right or left branch (depending on lat/lon values)
-        if (bXDim == true){
-            if (searchPoint.lat > currNode.point.lat){
-                currNode = currNode.rightChild; // am getting rightChild = null
-            }
-            else{
-                currNode = currNode.leftChild;
-            }            
-        }    
-
-        if (bXDim == false){
-            if (searchPoint.lon > currNode.point.lon){
-                currNode = currNode.rightChild;
-            }
-            else{
-                currNode = currNode.leftChild;
-            }            
-        }    
-        
-        // If reach end of tree without finding point, return null
-
-        if (currNode == null){
-            return null;
-        }
-
-        // Else repeat process
-        bXDim = !bXDim;
-        currNode = getNodeFromTree(searchPoint, currNode, bXDim);
-        return currNode;
-    }
+    } 
 
    /**
      * adds node to KDTree of the same category of the point.
@@ -531,44 +451,6 @@ public class KDTreeNN implements NearestNeigh{
         return addNode(addNode, currNode, currParent, bXDim);
     }
 
-     /**
-     * retrieves closest node to Point searchTerm INCORRECT - closest node will not nec be a leaf
-     * @param Point searchTerm, currNode (= rootNode of KDTree initially), and bXDim - (set to true initially)
-     * @return 
-     */
-
-    public Node getClosestNode(Point searchTerm, Node currNode, Node currParent, boolean bXDim) {
-
-        currParent = currNode;
-
-        //Go down either right or left branch (depending on lat/lon values)
-
-        if (bXDim == true){ // split on X dimension
-            if (searchTerm.lat > currNode.point.lat){ // branch right
-                currNode = currNode.rightChild;
-            }
-            else{
-                currNode = currNode.leftChild; // branch left
-            }            
-        }    
-
-        if (bXDim == false){ // split on Y dimension
-            if (searchTerm.lon > currNode.point.lon){ // branch right
-                currNode = currNode.rightChild;
-            }
-            else{
-                currNode = currNode.leftChild; // branch left
-            }            
-        }    
-        if (currNode == null){
-           return currParent; // have found closest node
-        }
-
-        // Repeat process
-        bXDim = !bXDim;
-        return getClosestNode(searchTerm, currNode, currParent, bXDim);
-    }
-
    /**
      * findMedian - finds index of the median point in list of points.
      * @param list of points
@@ -583,19 +465,6 @@ public class KDTreeNN implements NearestNeigh{
     
         return (int)((sortedPoints.size() - 1)/2); //if even number, will choose lower value
         
-    }
-
-   /**
-     * buildNode - given a point, returns a new node containing that point.
-     * @param list of points
-     * @return index of the median point
-     */
-
-    private Node buildNode(Point medianPoint) {
-    
-        Node newNode = new Node(medianPoint);
-        return newNode;
-
     }
     
       /**

@@ -1,0 +1,840 @@
+
+
+Test of kdtree with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 82.07127 milliseconds 
+Search for 2 points: elapsed time: 3.23906 milliseconds 
+Search for 3 points: elapsed time: 3.65560 milliseconds 
+Search for 4 points: elapsed time: 4.31127 milliseconds 
+Search for 5 points: elapsed time: 5.82581 milliseconds 
+Search for 6 points: elapsed time: 8.03579 milliseconds 
+Search for 7 points: elapsed time: 31.16572 milliseconds 
+Search for 8 points: elapsed time: 42.38628 milliseconds 
+Search for 9 points: elapsed time: 14.86035 milliseconds 
+Search for 10 points: elapsed time: 21.64798 milliseconds 
+
+
+Test of kdtree with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 7.52273 milliseconds 
+Search for 2 points: elapsed time: 8.90082 milliseconds 
+Search for 3 points: elapsed time: 7.61415 milliseconds 
+Search for 4 points: elapsed time: 6.88258 milliseconds 
+Search for 5 points: elapsed time: 6.21760 milliseconds 
+Search for 6 points: elapsed time: 11.25666 milliseconds 
+Search for 7 points: elapsed time: 11.50635 milliseconds 
+Search for 8 points: elapsed time: 21.57640 milliseconds 
+Search for 9 points: elapsed time: 9.71015 milliseconds 
+Search for 10 points: elapsed time: 11.68735 milliseconds 
+
+
+Test of kdtree with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 5.77682 milliseconds 
+Search for 2 points: elapsed time: 11.55015 milliseconds 
+Search for 3 points: elapsed time: 11.08602 milliseconds 
+Search for 4 points: elapsed time: 147.31754 milliseconds 
+Search for 5 points: elapsed time: 14.39051 milliseconds 
+Search for 6 points: elapsed time: 6.45797 milliseconds 
+Search for 7 points: elapsed time: 11.35664 milliseconds 
+Search for 8 points: elapsed time: 6.07221 milliseconds 
+Search for 9 points: elapsed time: 7.17371 milliseconds 
+Search for 10 points: elapsed time: 7.92078 milliseconds 
+
+
+Test of kdtree with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 5.94633 milliseconds 
+Search for 2 points: elapsed time: 6.48088 milliseconds 
+Search for 3 points: elapsed time: 6.04268 milliseconds 
+Search for 4 points: elapsed time: 6.11699 milliseconds 
+Search for 5 points: elapsed time: 8.03271 milliseconds 
+Search for 6 points: elapsed time: 12.80306 milliseconds 
+Search for 7 points: elapsed time: 49.33955 milliseconds 
+Search for 8 points: elapsed time: 45.15283 milliseconds 
+Search for 9 points: elapsed time: 41.09748 milliseconds 
+Search for 10 points: elapsed time: 68.87201 milliseconds 
+
+
+Test of kdtree with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 27.65170 milliseconds 
+Search for 2 points: elapsed time: 53.63410 milliseconds 
+Search for 3 points: elapsed time: 121.71209 milliseconds 
+Search for 4 points: elapsed time: 6.64766 milliseconds 
+Search for 5 points: elapsed time: 7.26640 milliseconds 
+Search for 6 points: elapsed time: 6.09197 milliseconds 
+Search for 7 points: elapsed time: 6.00286 milliseconds 
+Search for 8 points: elapsed time: 5.43048 milliseconds 
+Search for 9 points: elapsed time: 7.65703 milliseconds 
+Search for 10 points: elapsed time: 5.37290 milliseconds 
+
+
+Test of kdtree with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 8.39824 milliseconds 
+Search for 2 points: elapsed time: 5.69681 milliseconds 
+Search for 3 points: elapsed time: 5.91916 milliseconds 
+Search for 4 points: elapsed time: 8.43767 milliseconds 
+Search for 5 points: elapsed time: 6.43164 milliseconds 
+Search for 6 points: elapsed time: 153.85169 milliseconds 
+Search for 7 points: elapsed time: 5.66667 milliseconds 
+Search for 8 points: elapsed time: 7.53468 milliseconds 
+Search for 9 points: elapsed time: 6.78865 milliseconds 
+Search for 10 points: elapsed time: 7.27231 milliseconds 
+
+
+Test of kdtree with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 82.31514 milliseconds 
+Search for 2 points: elapsed time: 3.66967 milliseconds 
+Search for 3 points: elapsed time: 3.53741 milliseconds 
+Search for 4 points: elapsed time: 4.45533 milliseconds 
+Search for 5 points: elapsed time: 5.67245 milliseconds 
+Search for 6 points: elapsed time: 7.90864 milliseconds 
+Search for 7 points: elapsed time: 8.20534 milliseconds 
+Search for 8 points: elapsed time: 9.21654 milliseconds 
+Search for 9 points: elapsed time: 19.51863 milliseconds 
+Search for 10 points: elapsed time: 16.91198 milliseconds 
+
+
+Test of kdtree with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 24.03896 milliseconds 
+Search for 2 points: elapsed time: 35.47777 milliseconds 
+Search for 3 points: elapsed time: 54.59875 milliseconds 
+Search for 4 points: elapsed time: 19.25247 milliseconds 
+Search for 5 points: elapsed time: 5.70718 milliseconds 
+Search for 6 points: elapsed time: 9.36271 milliseconds 
+Search for 7 points: elapsed time: 63.68584 milliseconds 
+Search for 8 points: elapsed time: 51.41138 milliseconds 
+Search for 9 points: elapsed time: 8.18319 milliseconds 
+Search for 10 points: elapsed time: 6.48480 milliseconds 
+
+
+Test of kdtree with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 24.04843 milliseconds 
+Search for 2 points: elapsed time: 6.94232 milliseconds 
+Search for 3 points: elapsed time: 5.86402 milliseconds 
+Search for 4 points: elapsed time: 16.44537 milliseconds 
+Search for 5 points: elapsed time: 5.89092 milliseconds 
+Search for 6 points: elapsed time: 13.20976 milliseconds 
+Search for 7 points: elapsed time: 19.60305 milliseconds 
+Search for 8 points: elapsed time: 14.02093 milliseconds 
+Search for 9 points: elapsed time: 8.27213 milliseconds 
+Search for 10 points: elapsed time: 26.24737 milliseconds 
+
+
+Test of kdtree with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 13.32230 milliseconds 
+Search for 2 points: elapsed time: 9.05680 milliseconds 
+Search for 3 points: elapsed time: 7.48850 milliseconds 
+Search for 4 points: elapsed time: 7.49348 milliseconds 
+Search for 5 points: elapsed time: 5.41702 milliseconds 
+Search for 6 points: elapsed time: 5.33698 milliseconds 
+Search for 7 points: elapsed time: 6.51699 milliseconds 
+Search for 8 points: elapsed time: 5.54054 milliseconds 
+Search for 9 points: elapsed time: 8.26733 milliseconds 
+Search for 10 points: elapsed time: 9.75065 milliseconds 
+
+
+Test of kdtree with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 5.38981 milliseconds 
+Search for 2 points: elapsed time: 180.93395 milliseconds 
+Search for 3 points: elapsed time: 5.88326 milliseconds 
+Search for 4 points: elapsed time: 31.00582 milliseconds 
+Search for 5 points: elapsed time: 14.19194 milliseconds 
+Search for 6 points: elapsed time: 13.53572 milliseconds 
+Search for 7 points: elapsed time: 6.26577 milliseconds 
+Search for 8 points: elapsed time: 131.19581 milliseconds 
+Search for 9 points: elapsed time: 9.45436 milliseconds 
+Search for 10 points: elapsed time: 8.21912 milliseconds 
+
+
+Test of kdtree with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 8.91832 milliseconds 
+Search for 2 points: elapsed time: 6.73820 milliseconds 
+Search for 3 points: elapsed time: 6.45753 milliseconds 
+Search for 4 points: elapsed time: 13.09980 milliseconds 
+Search for 5 points: elapsed time: 5.75934 milliseconds 
+Search for 6 points: elapsed time: 9.38598 milliseconds 
+Search for 7 points: elapsed time: 6.71691 milliseconds 
+Search for 8 points: elapsed time: 6.37722 milliseconds 
+Search for 9 points: elapsed time: 6.63337 milliseconds 
+Search for 10 points: elapsed time: 10.40407 milliseconds 
+
+
+Test of kdtree with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 5027.05008 milliseconds 
+Search for 2 points: elapsed time: 106.71031 milliseconds 
+Search for 3 points: elapsed time: 53.38594 milliseconds 
+Search for 4 points: elapsed time: 146.48345 milliseconds 
+Search for 5 points: elapsed time: 22.08026 milliseconds 
+Search for 6 points: elapsed time: 12.47681 milliseconds 
+Search for 7 points: elapsed time: 129.18329 milliseconds 
+Search for 8 points: elapsed time: 9.70823 milliseconds 
+Search for 9 points: elapsed time: 97.86390 milliseconds 
+Search for 10 points: elapsed time: 15.08108 milliseconds 
+
+
+Test of kdtree with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 299.88706 milliseconds 
+Search for 2 points: elapsed time: 7.13546 milliseconds 
+Search for 3 points: elapsed time: 10.37191 milliseconds 
+Search for 4 points: elapsed time: 12.17651 milliseconds 
+Search for 5 points: elapsed time: 10.18432 milliseconds 
+Search for 6 points: elapsed time: 16.61028 milliseconds 
+Search for 7 points: elapsed time: 51.14334 milliseconds 
+Search for 8 points: elapsed time: 7.36191 milliseconds 
+Search for 9 points: elapsed time: 281.20569 milliseconds 
+Search for 10 points: elapsed time: 228.53291 milliseconds 
+
+
+Test of kdtree with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 11.69961 milliseconds 
+Search for 2 points: elapsed time: 7.61354 milliseconds 
+Search for 3 points: elapsed time: 21.20502 milliseconds 
+Search for 4 points: elapsed time: 30.97321 milliseconds 
+Search for 5 points: elapsed time: 8.36899 milliseconds 
+Search for 6 points: elapsed time: 17.29816 milliseconds 
+Search for 7 points: elapsed time: 23.71884 milliseconds 
+Search for 8 points: elapsed time: 215.77049 milliseconds 
+Search for 9 points: elapsed time: 159.10293 milliseconds 
+Search for 10 points: elapsed time: 12.21591 milliseconds 
+
+
+Test of kdtree with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 9.58578 milliseconds 
+Search for 2 points: elapsed time: 31.55322 milliseconds 
+Search for 3 points: elapsed time: 176.57718 milliseconds 
+Search for 4 points: elapsed time: 401.62615 milliseconds 
+Search for 5 points: elapsed time: 23.17722 milliseconds 
+Search for 6 points: elapsed time: 107.71728 milliseconds 
+Search for 7 points: elapsed time: 11.01895 milliseconds 
+Search for 8 points: elapsed time: 6.66417 milliseconds 
+Search for 9 points: elapsed time: 186.58439 milliseconds 
+Search for 10 points: elapsed time: 149.91394 milliseconds 
+
+
+Test of kdtree with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 28.56416 milliseconds 
+Search for 2 points: elapsed time: 7.15145 milliseconds 
+Search for 3 points: elapsed time: 231.58018 milliseconds 
+Search for 4 points: elapsed time: 202.28372 milliseconds 
+Search for 5 points: elapsed time: 37.83593 milliseconds 
+Search for 6 points: elapsed time: 123.84786 milliseconds 
+Search for 7 points: elapsed time: 166.97944 milliseconds 
+Search for 8 points: elapsed time: 52.37512 milliseconds 
+Search for 9 points: elapsed time: 29.15697 milliseconds 
+Search for 10 points: elapsed time: 5.71227 milliseconds 
+
+
+Test of kdtree with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 9.46602 milliseconds 
+Search for 2 points: elapsed time: 62.80324 milliseconds 
+Search for 3 points: elapsed time: 217.54259 milliseconds 
+Search for 4 points: elapsed time: 53.81376 milliseconds 
+Search for 5 points: elapsed time: 53.77703 milliseconds 
+Search for 6 points: elapsed time: 203.13529 milliseconds 
+Search for 7 points: elapsed time: 12.10632 milliseconds 
+Search for 8 points: elapsed time: 22.06528 milliseconds 
+Search for 9 points: elapsed time: 6.59135 milliseconds 
+Search for 10 points: elapsed time: 22.69393 milliseconds 
+
+
+Test of kdtree with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 6799.56804 milliseconds 
+Search for 2 points: elapsed time: 295.05893 milliseconds 
+Search for 3 points: elapsed time: 409.63997 milliseconds 
+Search for 4 points: elapsed time: 16.10565 milliseconds 
+Search for 5 points: elapsed time: 7.18557 milliseconds 
+Search for 6 points: elapsed time: 13.53660 milliseconds 
+Search for 7 points: elapsed time: 9.38780 milliseconds 
+Search for 8 points: elapsed time: 24.09630 milliseconds 
+Search for 9 points: elapsed time: 12.46486 milliseconds 
+Search for 10 points: elapsed time: 15.91077 milliseconds 
+
+
+Test of kdtree with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 15.54417 milliseconds 
+Search for 2 points: elapsed time: 438.99920 milliseconds 
+Search for 3 points: elapsed time: 227.26284 milliseconds 
+Search for 4 points: elapsed time: 90.42320 milliseconds 
+Search for 5 points: elapsed time: 228.31488 milliseconds 
+Search for 6 points: elapsed time: 156.66631 milliseconds 
+Search for 7 points: elapsed time: 7.56103 milliseconds 
+Search for 8 points: elapsed time: 67.20048 milliseconds 
+Search for 9 points: elapsed time: 271.66505 milliseconds 
+Search for 10 points: elapsed time: 160.41713 milliseconds 
+
+
+Test of kdtree with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 11.81857 milliseconds 
+Search for 2 points: elapsed time: 228.45763 milliseconds 
+Search for 3 points: elapsed time: 155.83260 milliseconds 
+Search for 4 points: elapsed time: 167.04850 milliseconds 
+Search for 5 points: elapsed time: 127.10573 milliseconds 
+Search for 6 points: elapsed time: 152.64476 milliseconds 
+Search for 7 points: elapsed time: 164.73211 milliseconds 
+Search for 8 points: elapsed time: 106.97416 milliseconds 
+Search for 9 points: elapsed time: 94.89852 milliseconds 
+Search for 10 points: elapsed time: 387.60479 milliseconds 
+
+
+Test of kdtree with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 7.34152 milliseconds 
+Search for 2 points: elapsed time: 150.69024 milliseconds 
+Search for 3 points: elapsed time: 163.44725 milliseconds 
+Search for 4 points: elapsed time: 459.53811 milliseconds 
+Search for 5 points: elapsed time: 32.68565 milliseconds 
+Search for 6 points: elapsed time: 28.94353 milliseconds 
+Search for 7 points: elapsed time: 39.72879 milliseconds 
+Search for 8 points: elapsed time: 8.67849 milliseconds 
+Search for 9 points: elapsed time: 8.94741 milliseconds 
+Search for 10 points: elapsed time: 312.95585 milliseconds 
+
+
+Test of kdtree with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 215.82401 milliseconds 
+Search for 2 points: elapsed time: 75.69944 milliseconds 
+Search for 3 points: elapsed time: 9.21598 milliseconds 
+Search for 4 points: elapsed time: 13.58422 milliseconds 
+Search for 5 points: elapsed time: 286.16684 milliseconds 
+Search for 6 points: elapsed time: 158.48486 milliseconds 
+Search for 7 points: elapsed time: 58.62972 milliseconds 
+Search for 8 points: elapsed time: 224.65024 milliseconds 
+Search for 9 points: elapsed time: 240.66983 milliseconds 
+Search for 10 points: elapsed time: 33.12991 milliseconds 
+
+
+Test of kdtree with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 294.86454 milliseconds 
+Search for 2 points: elapsed time: 22.82779 milliseconds 
+Search for 3 points: elapsed time: 89.83751 milliseconds 
+Search for 4 points: elapsed time: 400.10901 milliseconds 
+Search for 5 points: elapsed time: 104.16007 milliseconds 
+Search for 6 points: elapsed time: 91.81679 milliseconds 
+Search for 7 points: elapsed time: 251.74062 milliseconds 
+Search for 8 points: elapsed time: 20.24246 milliseconds 
+Search for 9 points: elapsed time: 13.99213 milliseconds 
+Search for 10 points: elapsed time: 8.88739 milliseconds 
+
+
+Test of kdtree with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 5379.98145 milliseconds 
+Search for 2 points: elapsed time: 229.81808 milliseconds 
+Search for 3 points: elapsed time: 72.43603 milliseconds 
+Search for 4 points: elapsed time: 191.66492 milliseconds 
+Search for 5 points: elapsed time: 25.82323 milliseconds 
+Search for 6 points: elapsed time: 13.61241 milliseconds 
+Search for 7 points: elapsed time: 78.01939 milliseconds 
+Search for 8 points: elapsed time: 307.39183 milliseconds 
+Search for 9 points: elapsed time: 13.22944 milliseconds 
+Search for 10 points: elapsed time: 12.57918 milliseconds 
+
+
+Test of kdtree with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 15.91571 milliseconds 
+Search for 2 points: elapsed time: 521.06616 milliseconds 
+Search for 3 points: elapsed time: 66.22914 milliseconds 
+Search for 4 points: elapsed time: 8.01091 milliseconds 
+Search for 5 points: elapsed time: 8.30790 milliseconds 
+Search for 6 points: elapsed time: 26.09228 milliseconds 
+Search for 7 points: elapsed time: 6.34645 milliseconds 
+Search for 8 points: elapsed time: 432.08642 milliseconds 
+Search for 9 points: elapsed time: 70.03397 milliseconds 
+Search for 10 points: elapsed time: 9.35445 milliseconds 
+
+
+Test of kdtree with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 17.60446 milliseconds 
+Search for 2 points: elapsed time: 162.26056 milliseconds 
+Search for 3 points: elapsed time: 195.49119 milliseconds 
+Search for 4 points: elapsed time: 178.12467 milliseconds 
+Search for 5 points: elapsed time: 171.50438 milliseconds 
+Search for 6 points: elapsed time: 68.84895 milliseconds 
+Search for 7 points: elapsed time: 162.21606 milliseconds 
+Search for 8 points: elapsed time: 57.09925 milliseconds 
+Search for 9 points: elapsed time: 219.00168 milliseconds 
+Search for 10 points: elapsed time: 291.18127 milliseconds 
+
+
+Test of kdtree with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 19.85574 milliseconds 
+Search for 2 points: elapsed time: 63.90344 milliseconds 
+Search for 3 points: elapsed time: 35.04310 milliseconds 
+Search for 4 points: elapsed time: 269.78353 milliseconds 
+Search for 5 points: elapsed time: 287.63036 milliseconds 
+Search for 6 points: elapsed time: 128.85024 milliseconds 
+Search for 7 points: elapsed time: 210.94481 milliseconds 
+Search for 8 points: elapsed time: 41.01768 milliseconds 
+Search for 9 points: elapsed time: 210.37884 milliseconds 
+Search for 10 points: elapsed time: 164.93269 milliseconds 
+
+
+Test of kdtree with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 218.52210 milliseconds 
+Search for 2 points: elapsed time: 161.10782 milliseconds 
+Search for 3 points: elapsed time: 114.45625 milliseconds 
+Search for 4 points: elapsed time: 267.15619 milliseconds 
+Search for 5 points: elapsed time: 50.18260 milliseconds 
+Search for 6 points: elapsed time: 452.80999 milliseconds 
+Search for 7 points: elapsed time: 35.94737 milliseconds 
+Search for 8 points: elapsed time: 102.38010 milliseconds 
+Search for 9 points: elapsed time: 371.03376 milliseconds 
+Search for 10 points: elapsed time: 8.36092 milliseconds 
+
+
+Test of kdtree with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 6.79443 milliseconds 
+Search for 2 points: elapsed time: 10.12593 milliseconds 
+Search for 3 points: elapsed time: 25.21228 milliseconds 
+Search for 4 points: elapsed time: 6.93997 milliseconds 
+Search for 5 points: elapsed time: 18.34367 milliseconds 
+Search for 6 points: elapsed time: 36.30048 milliseconds 
+Search for 7 points: elapsed time: 672.37327 milliseconds 
+Search for 8 points: elapsed time: 11.24146 milliseconds 
+Search for 9 points: elapsed time: 20.20393 milliseconds 
+Search for 10 points: elapsed time: 14.74432 milliseconds 
+
+
+Test of kdtree with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 5976.37752 milliseconds 
+Search for 2 points: elapsed time: 269.69623 milliseconds 
+Search for 3 points: elapsed time: 159.82118 milliseconds 
+Search for 4 points: elapsed time: 157.78946 milliseconds 
+Search for 5 points: elapsed time: 213.76732 milliseconds 
+Search for 6 points: elapsed time: 25.52673 milliseconds 
+Search for 7 points: elapsed time: 6.16966 milliseconds 
+Search for 8 points: elapsed time: 15.75565 milliseconds 
+Search for 9 points: elapsed time: 5.90612 milliseconds 
+Search for 10 points: elapsed time: 21.12027 milliseconds 
+
+
+Test of kdtree with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 6.56977 milliseconds 
+Search for 2 points: elapsed time: 448.50145 milliseconds 
+Search for 3 points: elapsed time: 191.94758 milliseconds 
+Search for 4 points: elapsed time: 10.38698 milliseconds 
+Search for 5 points: elapsed time: 31.82607 milliseconds 
+Search for 6 points: elapsed time: 31.46085 milliseconds 
+Search for 7 points: elapsed time: 12.69407 milliseconds 
+Search for 8 points: elapsed time: 10.85325 milliseconds 
+Search for 9 points: elapsed time: 7.67183 milliseconds 
+Search for 10 points: elapsed time: 5.95535 milliseconds 
+
+
+Test of kdtree with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 24.12573 milliseconds 
+Search for 2 points: elapsed time: 374.97956 milliseconds 
+Search for 3 points: elapsed time: 157.10236 milliseconds 
+Search for 4 points: elapsed time: 170.60462 milliseconds 
+Search for 5 points: elapsed time: 107.24876 milliseconds 
+Search for 6 points: elapsed time: 62.40863 milliseconds 
+Search for 7 points: elapsed time: 202.36151 milliseconds 
+Search for 8 points: elapsed time: 200.17768 milliseconds 
+Search for 9 points: elapsed time: 123.02794 milliseconds 
+Search for 10 points: elapsed time: 204.15709 milliseconds 
+
+
+Test of kdtree with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 34.76647 milliseconds 
+Search for 2 points: elapsed time: 229.17814 milliseconds 
+Search for 3 points: elapsed time: 23.80393 milliseconds 
+Search for 4 points: elapsed time: 285.90855 milliseconds 
+Search for 5 points: elapsed time: 13.81308 milliseconds 
+Search for 6 points: elapsed time: 15.79384 milliseconds 
+Search for 7 points: elapsed time: 13.84575 milliseconds 
+Search for 8 points: elapsed time: 14.74551 milliseconds 
+Search for 9 points: elapsed time: 8.83834 milliseconds 
+Search for 10 points: elapsed time: 15.64934 milliseconds 
+
+
+Test of kdtree with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 459.65551 milliseconds 
+Search for 2 points: elapsed time: 37.93328 milliseconds 
+Search for 3 points: elapsed time: 221.42684 milliseconds 
+Search for 4 points: elapsed time: 85.96399 milliseconds 
+Search for 5 points: elapsed time: 11.12733 milliseconds 
+Search for 6 points: elapsed time: 8.87171 milliseconds 
+Search for 7 points: elapsed time: 269.99678 milliseconds 
+Search for 8 points: elapsed time: 150.77592 milliseconds 
+Search for 9 points: elapsed time: 206.79208 milliseconds 
+Search for 10 points: elapsed time: 211.53166 milliseconds 
+
+
+Test of kdtree with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 238.40244 milliseconds 
+Search for 2 points: elapsed time: 173.48372 milliseconds 
+Search for 3 points: elapsed time: 9.84976 milliseconds 
+Search for 4 points: elapsed time: 15.36618 milliseconds 
+Search for 5 points: elapsed time: 9.24684 milliseconds 
+Search for 6 points: elapsed time: 12.31039 milliseconds 
+Search for 7 points: elapsed time: 9.87101 milliseconds 
+Search for 8 points: elapsed time: 7.62531 milliseconds 
+Search for 9 points: elapsed time: 12.36040 milliseconds 
+Search for 10 points: elapsed time: 16.42344 milliseconds 
+
+
+Test of kdtree with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 1496.06103 milliseconds 
+Search for 2 points: elapsed time: 17.28551 milliseconds 
+Search for 3 points: elapsed time: 85.03740 milliseconds 
+Search for 4 points: elapsed time: 51.92009 milliseconds 
+Search for 5 points: elapsed time: 9.88055 milliseconds 
+Search for 6 points: elapsed time: 14.50994 milliseconds 
+Search for 7 points: elapsed time: 50.01402 milliseconds 
+Search for 8 points: elapsed time: 28.56225 milliseconds 
+Search for 9 points: elapsed time: 5.48864 milliseconds 
+Search for 10 points: elapsed time: 41.23571 milliseconds 
+
+
+Test of kdtree with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 124.14607 milliseconds 
+Search for 2 points: elapsed time: 17.70158 milliseconds 
+Search for 3 points: elapsed time: 6.56972 milliseconds 
+Search for 4 points: elapsed time: 8.26882 milliseconds 
+Search for 5 points: elapsed time: 5.87804 milliseconds 
+Search for 6 points: elapsed time: 49.82468 milliseconds 
+Search for 7 points: elapsed time: 62.40985 milliseconds 
+Search for 8 points: elapsed time: 7.36437 milliseconds 
+Search for 9 points: elapsed time: 27.64385 milliseconds 
+Search for 10 points: elapsed time: 65.53598 milliseconds 
+
+
+Test of kdtree with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 7.94239 milliseconds 
+Search for 2 points: elapsed time: 16.71196 milliseconds 
+Search for 3 points: elapsed time: 9.65925 milliseconds 
+Search for 4 points: elapsed time: 10.69600 milliseconds 
+Search for 5 points: elapsed time: 5.90964 milliseconds 
+Search for 6 points: elapsed time: 8.50632 milliseconds 
+Search for 7 points: elapsed time: 9.24762 milliseconds 
+Search for 8 points: elapsed time: 5.55209 milliseconds 
+Search for 9 points: elapsed time: 15.49095 milliseconds 
+Search for 10 points: elapsed time: 55.42823 milliseconds 
+
+
+Test of kdtree with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 53.76256 milliseconds 
+Search for 2 points: elapsed time: 199.37816 milliseconds 
+Search for 3 points: elapsed time: 27.85244 milliseconds 
+Search for 4 points: elapsed time: 20.20288 milliseconds 
+Search for 5 points: elapsed time: 7.91453 milliseconds 
+Search for 6 points: elapsed time: 80.44988 milliseconds 
+Search for 7 points: elapsed time: 13.36538 milliseconds 
+Search for 8 points: elapsed time: 6.78730 milliseconds 
+Search for 9 points: elapsed time: 7.89912 milliseconds 
+Search for 10 points: elapsed time: 10.58218 milliseconds 
+
+
+Test of kdtree with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 6.46306 milliseconds 
+Search for 2 points: elapsed time: 8.18197 milliseconds 
+Search for 3 points: elapsed time: 48.08546 milliseconds 
+Search for 4 points: elapsed time: 68.66198 milliseconds 
+Search for 5 points: elapsed time: 55.95225 milliseconds 
+Search for 6 points: elapsed time: 22.76532 milliseconds 
+Search for 7 points: elapsed time: 7.97812 milliseconds 
+Search for 8 points: elapsed time: 7.84381 milliseconds 
+Search for 9 points: elapsed time: 9.52458 milliseconds 
+Search for 10 points: elapsed time: 7.26630 milliseconds 
+
+
+Test of kdtree with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 11.14688 milliseconds 
+Search for 2 points: elapsed time: 6.83425 milliseconds 
+Search for 3 points: elapsed time: 80.70057 milliseconds 
+Search for 4 points: elapsed time: 60.39259 milliseconds 
+Search for 5 points: elapsed time: 10.23082 milliseconds 
+Search for 6 points: elapsed time: 11.38233 milliseconds 
+Search for 7 points: elapsed time: 5.72992 milliseconds 
+Search for 8 points: elapsed time: 8.75705 milliseconds 
+Search for 9 points: elapsed time: 7.36819 milliseconds 
+Search for 10 points: elapsed time: 7.09126 milliseconds 
+
+
+Test of kdtree with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 4666.32209 milliseconds 
+Search for 2 points: elapsed time: 291.08819 milliseconds 
+Search for 3 points: elapsed time: 17.40346 milliseconds 
+Search for 4 points: elapsed time: 11.87074 milliseconds 
+Search for 5 points: elapsed time: 9.04592 milliseconds 
+Search for 6 points: elapsed time: 5.83103 milliseconds 
+Search for 7 points: elapsed time: 7.83948 milliseconds 
+Search for 8 points: elapsed time: 213.93548 milliseconds 
+Search for 9 points: elapsed time: 68.50580 milliseconds 
+Search for 10 points: elapsed time: 15.14458 milliseconds 
+
+
+Test of kdtree with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 75.87434 milliseconds 
+Search for 2 points: elapsed time: 210.64203 milliseconds 
+Search for 3 points: elapsed time: 17.30812 milliseconds 
+Search for 4 points: elapsed time: 38.43123 milliseconds 
+Search for 5 points: elapsed time: 10.74599 milliseconds 
+Search for 6 points: elapsed time: 12.02071 milliseconds 
+Search for 7 points: elapsed time: 33.76737 milliseconds 
+Search for 8 points: elapsed time: 245.59934 milliseconds 
+Search for 9 points: elapsed time: 38.02650 milliseconds 
+Search for 10 points: elapsed time: 22.91280 milliseconds 
+
+
+Test of kdtree with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 60.33969 milliseconds 
+Search for 2 points: elapsed time: 160.98953 milliseconds 
+Search for 3 points: elapsed time: 89.74207 milliseconds 
+Search for 4 points: elapsed time: 14.18141 milliseconds 
+Search for 5 points: elapsed time: 215.11739 milliseconds 
+Search for 6 points: elapsed time: 78.15519 milliseconds 
+Search for 7 points: elapsed time: 95.91898 milliseconds 
+Search for 8 points: elapsed time: 199.29988 milliseconds 
+Search for 9 points: elapsed time: 11.03910 milliseconds 
+Search for 10 points: elapsed time: 9.40934 milliseconds 
+
+
+Test of kdtree with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 107.51971 milliseconds 
+Search for 2 points: elapsed time: 205.78058 milliseconds 
+Search for 3 points: elapsed time: 115.72673 milliseconds 
+Search for 4 points: elapsed time: 168.73902 milliseconds 
+Search for 5 points: elapsed time: 34.04822 milliseconds 
+Search for 6 points: elapsed time: 74.92710 milliseconds 
+Search for 7 points: elapsed time: 158.56290 milliseconds 
+Search for 8 points: elapsed time: 139.15670 milliseconds 
+Search for 9 points: elapsed time: 25.22252 milliseconds 
+Search for 10 points: elapsed time: 150.60381 milliseconds 
+
+
+Test of kdtree with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 215.44161 milliseconds 
+Search for 2 points: elapsed time: 33.52456 milliseconds 
+Search for 3 points: elapsed time: 6.20874 milliseconds 
+Search for 4 points: elapsed time: 26.32636 milliseconds 
+Search for 5 points: elapsed time: 6.78624 milliseconds 
+Search for 6 points: elapsed time: 6.27517 milliseconds 
+Search for 7 points: elapsed time: 10.19175 milliseconds 
+Search for 8 points: elapsed time: 18.79940 milliseconds 
+Search for 9 points: elapsed time: 7.49031 milliseconds 
+Search for 10 points: elapsed time: 443.46945 milliseconds 
+
+
+Test of kdtree with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 12.27104 milliseconds 
+Search for 2 points: elapsed time: 8.19801 milliseconds 
+Search for 3 points: elapsed time: 7.63385 milliseconds 
+Search for 4 points: elapsed time: 11.02435 milliseconds 
+Search for 5 points: elapsed time: 174.86162 milliseconds 
+Search for 6 points: elapsed time: 173.76594 milliseconds 
+Search for 7 points: elapsed time: 16.72155 milliseconds 
+Search for 8 points: elapsed time: 9.24770 milliseconds 
+Search for 9 points: elapsed time: 26.53665 milliseconds 
+Search for 10 points: elapsed time: 22.43246 milliseconds 
+
+
+Test of kdtree with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 4885.13184 milliseconds 
+Search for 2 points: elapsed time: 80.20669 milliseconds 
+Search for 3 points: elapsed time: 22.82890 milliseconds 
+Search for 4 points: elapsed time: 49.88387 milliseconds 
+Search for 5 points: elapsed time: 94.19843 milliseconds 
+Search for 6 points: elapsed time: 111.29347 milliseconds 
+Search for 7 points: elapsed time: 37.31454 milliseconds 
+Search for 8 points: elapsed time: 306.77304 milliseconds 
+Search for 9 points: elapsed time: 14.57813 milliseconds 
+Search for 10 points: elapsed time: 17.09140 milliseconds 
+
+
+Test of kdtree with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 11.10636 milliseconds 
+Search for 2 points: elapsed time: 5.67859 milliseconds 
+Search for 3 points: elapsed time: 18.05569 milliseconds 
+Search for 4 points: elapsed time: 8.21646 milliseconds 
+Search for 5 points: elapsed time: 7.92395 milliseconds 
+Search for 6 points: elapsed time: 11.26072 milliseconds 
+Search for 7 points: elapsed time: 395.22486 milliseconds 
+Search for 8 points: elapsed time: 43.63987 milliseconds 
+Search for 9 points: elapsed time: 51.10057 milliseconds 
+Search for 10 points: elapsed time: 73.02817 milliseconds 
+
+
+Test of kdtree with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 258.86270 milliseconds 
+Search for 2 points: elapsed time: 171.58312 milliseconds 
+Search for 3 points: elapsed time: 43.06589 milliseconds 
+Search for 4 points: elapsed time: 12.34560 milliseconds 
+Search for 5 points: elapsed time: 7.70811 milliseconds 
+Search for 6 points: elapsed time: 7.14339 milliseconds 
+Search for 7 points: elapsed time: 9.13271 milliseconds 
+Search for 8 points: elapsed time: 44.77907 milliseconds 
+Search for 9 points: elapsed time: 361.46322 milliseconds 
+Search for 10 points: elapsed time: 45.14469 milliseconds 
+
+
+Test of kdtree with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 6.79557 milliseconds 
+Search for 2 points: elapsed time: 12.61709 milliseconds 
+Search for 3 points: elapsed time: 13.91064 milliseconds 
+Search for 4 points: elapsed time: 10.36964 milliseconds 
+Search for 5 points: elapsed time: 57.91728 milliseconds 
+Search for 6 points: elapsed time: 313.12730 milliseconds 
+Search for 7 points: elapsed time: 154.78659 milliseconds 
+Search for 8 points: elapsed time: 10.34300 milliseconds 
+Search for 9 points: elapsed time: 6.73823 milliseconds 
+Search for 10 points: elapsed time: 18.02181 milliseconds 
+
+
+Test of kdtree with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 30.82322 milliseconds 
+Search for 2 points: elapsed time: 8.75930 milliseconds 
+Search for 3 points: elapsed time: 11.20358 milliseconds 
+Search for 4 points: elapsed time: 9.98473 milliseconds 
+Search for 5 points: elapsed time: 114.08212 milliseconds 
+Search for 6 points: elapsed time: 93.59660 milliseconds 
+Search for 7 points: elapsed time: 176.42645 milliseconds 
+Search for 8 points: elapsed time: 72.37401 milliseconds 
+Search for 9 points: elapsed time: 5.96069 milliseconds 
+Search for 10 points: elapsed time: 20.30784 milliseconds 
+
+
+Test of kdtree with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 10.76856 milliseconds 
+Search for 2 points: elapsed time: 9.96635 milliseconds 
+Search for 3 points: elapsed time: 350.73156 milliseconds 
+Search for 4 points: elapsed time: 25.14319 milliseconds 
+Search for 5 points: elapsed time: 46.75281 milliseconds 
+Search for 6 points: elapsed time: 53.13979 milliseconds 
+Search for 7 points: elapsed time: 42.21107 milliseconds 
+Search for 8 points: elapsed time: 112.08629 milliseconds 
+Search for 9 points: elapsed time: 58.49997 milliseconds 
+Search for 10 points: elapsed time: 42.27982 milliseconds 
+
+
+Test of kdtree with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 6444.49857 milliseconds 
+Search for 2 points: elapsed time: 157.00393 milliseconds 
+Search for 3 points: elapsed time: 76.99334 milliseconds 
+Search for 4 points: elapsed time: 31.79499 milliseconds 
+Search for 5 points: elapsed time: 396.86157 milliseconds 
+Search for 6 points: elapsed time: 159.10708 milliseconds 
+Search for 7 points: elapsed time: 72.50022 milliseconds 
+Search for 8 points: elapsed time: 207.68945 milliseconds 
+Search for 9 points: elapsed time: 243.66628 milliseconds 
+Search for 10 points: elapsed time: 43.54586 milliseconds 
+
+
+Test of kdtree with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 7.01484 milliseconds 
+Search for 2 points: elapsed time: 5.21455 milliseconds 
+Search for 3 points: elapsed time: 53.36142 milliseconds 
+Search for 4 points: elapsed time: 353.97840 milliseconds 
+Search for 5 points: elapsed time: 33.09832 milliseconds 
+Search for 6 points: elapsed time: 91.62033 milliseconds 
+Search for 7 points: elapsed time: 373.10237 milliseconds 
+Search for 8 points: elapsed time: 15.06174 milliseconds 
+Search for 9 points: elapsed time: 445.32341 milliseconds 
+Search for 10 points: elapsed time: 15.85984 milliseconds 
+
+
+Test of kdtree with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 8.29985 milliseconds 
+Search for 2 points: elapsed time: 41.96647 milliseconds 
+Search for 3 points: elapsed time: 541.95980 milliseconds 
+Search for 4 points: elapsed time: 121.54687 milliseconds 
+Search for 5 points: elapsed time: 31.96021 milliseconds 
+Search for 6 points: elapsed time: 263.42951 milliseconds 
+Search for 7 points: elapsed time: 39.52884 milliseconds 
+Search for 8 points: elapsed time: 42.23923 milliseconds 
+Search for 9 points: elapsed time: 13.71705 milliseconds 
+Search for 10 points: elapsed time: 6.68298 milliseconds 
+
+
+Test of kdtree with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 14.22904 milliseconds 
+Search for 2 points: elapsed time: 358.84287 milliseconds 
+Search for 3 points: elapsed time: 440.08831 milliseconds 
+Search for 4 points: elapsed time: 165.54155 milliseconds 
+Search for 5 points: elapsed time: 161.97680 milliseconds 
+Search for 6 points: elapsed time: 171.60465 milliseconds 
+Search for 7 points: elapsed time: 227.36284 milliseconds 
+Search for 8 points: elapsed time: 111.21532 milliseconds 
+Search for 9 points: elapsed time: 177.87576 milliseconds 
+Search for 10 points: elapsed time: 167.78029 milliseconds 
+
+
+Test of kdtree with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 64.97953 milliseconds 
+Search for 2 points: elapsed time: 264.65642 milliseconds 
+Search for 3 points: elapsed time: 57.23675 milliseconds 
+Search for 4 points: elapsed time: 158.57606 milliseconds 
+Search for 5 points: elapsed time: 162.33771 milliseconds 
+Search for 6 points: elapsed time: 165.91301 milliseconds 
+Search for 7 points: elapsed time: 205.31041 milliseconds 
+Search for 8 points: elapsed time: 34.48262 milliseconds 
+Search for 9 points: elapsed time: 7.97380 milliseconds 
+Search for 10 points: elapsed time: 9.53046 milliseconds 
+
+
+Test of kdtree with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 10.91910 milliseconds 
+Search for 2 points: elapsed time: 5.90957 milliseconds 
+Search for 3 points: elapsed time: 360.76392 milliseconds 
+Search for 4 points: elapsed time: 214.87635 milliseconds 
+Search for 5 points: elapsed time: 193.01431 milliseconds 
+Search for 6 points: elapsed time: 27.22787 milliseconds 
+Search for 7 points: elapsed time: 11.71826 milliseconds 
+Search for 8 points: elapsed time: 8.85881 milliseconds 
+Search for 9 points: elapsed time: 15.37708 milliseconds 
+Search for 10 points: elapsed time: 9.49565 milliseconds 

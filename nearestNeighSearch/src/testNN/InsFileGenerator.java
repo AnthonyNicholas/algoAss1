@@ -31,7 +31,7 @@ public class InsFileGenerator {
 
         for (k = 1; k<numInstFiles; k++){
             s1 = "./testResults/InstructionFiles/test" + k + ".in";
-            fOut = new FileWriter(s1);
+            fOut = new FileWriter(s1,true);
             writeSearch(fOut, "restaurant", k); 
             fOut.close();
         }
@@ -48,13 +48,22 @@ public class InsFileGenerator {
     //     // Generate Instruction
     //     // S restaurant -33.60 144.87 10
 
-        Double searchLat = -33.60;
-        Double searchLon = 144.87;
+        Double searchLat; 
+        Double searchLon; 
+        Random rand = new Random();
         String s2;
 
-        s2 = "S" + " " + category + " " + searchLat + " " + searchLon + " " +  k + "\n";
-        fOut.write(s2);
-            
+        for (int i = 0; i < 10; i++){
+
+            searchLat = -(35 + 5*rand.nextDouble());
+            searchLon = 138 + 12*rand.nextDouble();
+
+            s2 = "S" + " " + category + " " + searchLat + " " + searchLon + " " +  k + "\n";
+            fOut.write(s2);
+        
+        }
+
+
         return;
 
     }  

@@ -1,0 +1,840 @@
+
+
+Test of naive with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 84.69117 milliseconds 
+Search for 2 points: elapsed time: 3.19554 milliseconds 
+Search for 3 points: elapsed time: 3.45506 milliseconds 
+Search for 4 points: elapsed time: 5.51697 milliseconds 
+Search for 5 points: elapsed time: 7.09022 milliseconds 
+Search for 6 points: elapsed time: 9.70270 milliseconds 
+Search for 7 points: elapsed time: 26.50671 milliseconds 
+Search for 8 points: elapsed time: 36.09155 milliseconds 
+Search for 9 points: elapsed time: 15.71190 milliseconds 
+Search for 10 points: elapsed time: 16.94043 milliseconds 
+
+
+Test of naive with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 6.49243 milliseconds 
+Search for 2 points: elapsed time: 8.00544 milliseconds 
+Search for 3 points: elapsed time: 46.31414 milliseconds 
+Search for 4 points: elapsed time: 21.92311 milliseconds 
+Search for 5 points: elapsed time: 21.19202 milliseconds 
+Search for 6 points: elapsed time: 6.73711 milliseconds 
+Search for 7 points: elapsed time: 27.64243 milliseconds 
+Search for 8 points: elapsed time: 6.81900 milliseconds 
+Search for 9 points: elapsed time: 32.34389 milliseconds 
+Search for 10 points: elapsed time: 9.18307 milliseconds 
+
+
+Test of naive with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 15.84738 milliseconds 
+Search for 2 points: elapsed time: 6.60925 milliseconds 
+Search for 3 points: elapsed time: 11.38246 milliseconds 
+Search for 4 points: elapsed time: 16.97555 milliseconds 
+Search for 5 points: elapsed time: 15.61048 milliseconds 
+Search for 6 points: elapsed time: 7.60348 milliseconds 
+Search for 7 points: elapsed time: 79.89749 milliseconds 
+Search for 8 points: elapsed time: 7.39523 milliseconds 
+Search for 9 points: elapsed time: 70.49858 milliseconds 
+Search for 10 points: elapsed time: 14.46285 milliseconds 
+
+
+Test of naive with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 8.07851 milliseconds 
+Search for 2 points: elapsed time: 6.73598 milliseconds 
+Search for 3 points: elapsed time: 5.63601 milliseconds 
+Search for 4 points: elapsed time: 7.81648 milliseconds 
+Search for 5 points: elapsed time: 24.56381 milliseconds 
+Search for 6 points: elapsed time: 20.04292 milliseconds 
+Search for 7 points: elapsed time: 9.41413 milliseconds 
+Search for 8 points: elapsed time: 154.19333 milliseconds 
+Search for 9 points: elapsed time: 10.80771 milliseconds 
+Search for 10 points: elapsed time: 7.12848 milliseconds 
+
+
+Test of naive with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 5.31975 milliseconds 
+Search for 2 points: elapsed time: 5.56213 milliseconds 
+Search for 3 points: elapsed time: 6.32543 milliseconds 
+Search for 4 points: elapsed time: 6.59739 milliseconds 
+Search for 5 points: elapsed time: 6.23790 milliseconds 
+Search for 6 points: elapsed time: 7.58854 milliseconds 
+Search for 7 points: elapsed time: 6.64479 milliseconds 
+Search for 8 points: elapsed time: 8.03956 milliseconds 
+Search for 9 points: elapsed time: 9.19467 milliseconds 
+Search for 10 points: elapsed time: 127.25614 milliseconds 
+
+
+Test of naive with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 6.19265 milliseconds 
+Search for 2 points: elapsed time: 7.62470 milliseconds 
+Search for 3 points: elapsed time: 7.60081 milliseconds 
+Search for 4 points: elapsed time: 7.50394 milliseconds 
+Search for 5 points: elapsed time: 7.35910 milliseconds 
+Search for 6 points: elapsed time: 5.72909 milliseconds 
+Search for 7 points: elapsed time: 6.02644 milliseconds 
+Search for 8 points: elapsed time: 6.94254 milliseconds 
+Search for 9 points: elapsed time: 5.98706 milliseconds 
+Search for 10 points: elapsed time: 6.96400 milliseconds 
+
+
+Test of naive with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 2169.13040 milliseconds 
+Search for 2 points: elapsed time: 21.05398 milliseconds 
+Search for 3 points: elapsed time: 10.06304 milliseconds 
+Search for 4 points: elapsed time: 196.04214 milliseconds 
+Search for 5 points: elapsed time: 10.48526 milliseconds 
+Search for 6 points: elapsed time: 6.42741 milliseconds 
+Search for 7 points: elapsed time: 5.62024 milliseconds 
+Search for 8 points: elapsed time: 5.50601 milliseconds 
+Search for 9 points: elapsed time: 62.31132 milliseconds 
+Search for 10 points: elapsed time: 50.54862 milliseconds 
+
+
+Test of naive with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 5.78713 milliseconds 
+Search for 2 points: elapsed time: 5.69288 milliseconds 
+Search for 3 points: elapsed time: 7.36023 milliseconds 
+Search for 4 points: elapsed time: 6.80944 milliseconds 
+Search for 5 points: elapsed time: 7.59545 milliseconds 
+Search for 6 points: elapsed time: 157.77831 milliseconds 
+Search for 7 points: elapsed time: 9.00771 milliseconds 
+Search for 8 points: elapsed time: 14.59253 milliseconds 
+Search for 9 points: elapsed time: 6.18001 milliseconds 
+Search for 10 points: elapsed time: 6.70600 milliseconds 
+
+
+Test of naive with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 9.82620 milliseconds 
+Search for 2 points: elapsed time: 8.14636 milliseconds 
+Search for 3 points: elapsed time: 15.02186 milliseconds 
+Search for 4 points: elapsed time: 22.47471 milliseconds 
+Search for 5 points: elapsed time: 177.60857 milliseconds 
+Search for 6 points: elapsed time: 38.67214 milliseconds 
+Search for 7 points: elapsed time: 14.51718 milliseconds 
+Search for 8 points: elapsed time: 8.23082 milliseconds 
+Search for 9 points: elapsed time: 5.28159 milliseconds 
+Search for 10 points: elapsed time: 15.30272 milliseconds 
+
+
+Test of naive with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 8.86860 milliseconds 
+Search for 2 points: elapsed time: 5.61317 milliseconds 
+Search for 3 points: elapsed time: 7.36635 milliseconds 
+Search for 4 points: elapsed time: 5.84828 milliseconds 
+Search for 5 points: elapsed time: 7.83953 milliseconds 
+Search for 6 points: elapsed time: 8.58858 milliseconds 
+Search for 7 points: elapsed time: 7.62558 milliseconds 
+Search for 8 points: elapsed time: 5.90306 milliseconds 
+Search for 9 points: elapsed time: 287.96394 milliseconds 
+Search for 10 points: elapsed time: 7.26056 milliseconds 
+
+
+Test of naive with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 7.55882 milliseconds 
+Search for 2 points: elapsed time: 10.97021 milliseconds 
+Search for 3 points: elapsed time: 6.88329 milliseconds 
+Search for 4 points: elapsed time: 8.48118 milliseconds 
+Search for 5 points: elapsed time: 8.34179 milliseconds 
+Search for 6 points: elapsed time: 9.97628 milliseconds 
+Search for 7 points: elapsed time: 8.02278 milliseconds 
+Search for 8 points: elapsed time: 7.55187 milliseconds 
+Search for 9 points: elapsed time: 10.93163 milliseconds 
+Search for 10 points: elapsed time: 269.41988 milliseconds 
+
+
+Test of naive with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 10.89714 milliseconds 
+Search for 2 points: elapsed time: 5.98718 milliseconds 
+Search for 3 points: elapsed time: 9.10253 milliseconds 
+Search for 4 points: elapsed time: 7.45568 milliseconds 
+Search for 5 points: elapsed time: 7.24798 milliseconds 
+Search for 6 points: elapsed time: 6.95010 milliseconds 
+Search for 7 points: elapsed time: 8.82064 milliseconds 
+Search for 8 points: elapsed time: 11.09406 milliseconds 
+Search for 9 points: elapsed time: 9.22320 milliseconds 
+Search for 10 points: elapsed time: 7.66988 milliseconds 
+
+
+Test of naive with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 3532.05005 milliseconds 
+Search for 2 points: elapsed time: 6.87176 milliseconds 
+Search for 3 points: elapsed time: 10.47284 milliseconds 
+Search for 4 points: elapsed time: 10.98983 milliseconds 
+Search for 5 points: elapsed time: 9.74240 milliseconds 
+Search for 6 points: elapsed time: 5.60653 milliseconds 
+Search for 7 points: elapsed time: 7.33914 milliseconds 
+Search for 8 points: elapsed time: 353.71737 milliseconds 
+Search for 9 points: elapsed time: 121.92281 milliseconds 
+Search for 10 points: elapsed time: 18.71925 milliseconds 
+
+
+Test of naive with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 9.32498 milliseconds 
+Search for 2 points: elapsed time: 12.92116 milliseconds 
+Search for 3 points: elapsed time: 146.06554 milliseconds 
+Search for 4 points: elapsed time: 130.07801 milliseconds 
+Search for 5 points: elapsed time: 15.85094 milliseconds 
+Search for 6 points: elapsed time: 15.48097 milliseconds 
+Search for 7 points: elapsed time: 235.88249 milliseconds 
+Search for 8 points: elapsed time: 11.45294 milliseconds 
+Search for 9 points: elapsed time: 6.81077 milliseconds 
+Search for 10 points: elapsed time: 135.29282 milliseconds 
+
+
+Test of naive with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 38.21447 milliseconds 
+Search for 2 points: elapsed time: 8.69896 milliseconds 
+Search for 3 points: elapsed time: 9.08702 milliseconds 
+Search for 4 points: elapsed time: 7.83071 milliseconds 
+Search for 5 points: elapsed time: 5.46080 milliseconds 
+Search for 6 points: elapsed time: 7.38705 milliseconds 
+Search for 7 points: elapsed time: 9.17488 milliseconds 
+Search for 8 points: elapsed time: 5.67712 milliseconds 
+Search for 9 points: elapsed time: 5.93014 milliseconds 
+Search for 10 points: elapsed time: 146.28349 milliseconds 
+
+
+Test of naive with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 255.62468 milliseconds 
+Search for 2 points: elapsed time: 74.28916 milliseconds 
+Search for 3 points: elapsed time: 9.18839 milliseconds 
+Search for 4 points: elapsed time: 5.42204 milliseconds 
+Search for 5 points: elapsed time: 13.94735 milliseconds 
+Search for 6 points: elapsed time: 17.01217 milliseconds 
+Search for 7 points: elapsed time: 27.83486 milliseconds 
+Search for 8 points: elapsed time: 11.83781 milliseconds 
+Search for 9 points: elapsed time: 13.48166 milliseconds 
+Search for 10 points: elapsed time: 343.58712 milliseconds 
+
+
+Test of naive with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 14.46692 milliseconds 
+Search for 2 points: elapsed time: 8.71931 milliseconds 
+Search for 3 points: elapsed time: 6.31810 milliseconds 
+Search for 4 points: elapsed time: 189.37526 milliseconds 
+Search for 5 points: elapsed time: 47.79664 milliseconds 
+Search for 6 points: elapsed time: 12.10832 milliseconds 
+Search for 7 points: elapsed time: 200.84504 milliseconds 
+Search for 8 points: elapsed time: 150.39760 milliseconds 
+Search for 9 points: elapsed time: 7.74585 milliseconds 
+Search for 10 points: elapsed time: 7.98777 milliseconds 
+
+
+Test of naive with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 9.13413 milliseconds 
+Search for 2 points: elapsed time: 240.38194 milliseconds 
+Search for 3 points: elapsed time: 11.95262 milliseconds 
+Search for 4 points: elapsed time: 6.60187 milliseconds 
+Search for 5 points: elapsed time: 11.22947 milliseconds 
+Search for 6 points: elapsed time: 7.20253 milliseconds 
+Search for 7 points: elapsed time: 5.81657 milliseconds 
+Search for 8 points: elapsed time: 223.34597 milliseconds 
+Search for 9 points: elapsed time: 162.52588 milliseconds 
+Search for 10 points: elapsed time: 21.25518 milliseconds 
+
+
+Test of naive with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 4557.98061 milliseconds 
+Search for 2 points: elapsed time: 260.44948 milliseconds 
+Search for 3 points: elapsed time: 222.09474 milliseconds 
+Search for 4 points: elapsed time: 13.47983 milliseconds 
+Search for 5 points: elapsed time: 11.59840 milliseconds 
+Search for 6 points: elapsed time: 120.21005 milliseconds 
+Search for 7 points: elapsed time: 90.29313 milliseconds 
+Search for 8 points: elapsed time: 8.88854 milliseconds 
+Search for 9 points: elapsed time: 11.38585 milliseconds 
+Search for 10 points: elapsed time: 6.04408 milliseconds 
+
+
+Test of naive with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 9.37843 milliseconds 
+Search for 2 points: elapsed time: 6.65194 milliseconds 
+Search for 3 points: elapsed time: 23.04143 milliseconds 
+Search for 4 points: elapsed time: 78.91632 milliseconds 
+Search for 5 points: elapsed time: 40.78725 milliseconds 
+Search for 6 points: elapsed time: 152.23273 milliseconds 
+Search for 7 points: elapsed time: 198.39396 milliseconds 
+Search for 8 points: elapsed time: 126.03758 milliseconds 
+Search for 9 points: elapsed time: 11.18925 milliseconds 
+Search for 10 points: elapsed time: 34.63985 milliseconds 
+
+
+Test of naive with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 29.97465 milliseconds 
+Search for 2 points: elapsed time: 11.54639 milliseconds 
+Search for 3 points: elapsed time: 7.50484 milliseconds 
+Search for 4 points: elapsed time: 6.17419 milliseconds 
+Search for 5 points: elapsed time: 7.03214 milliseconds 
+Search for 6 points: elapsed time: 8.43059 milliseconds 
+Search for 7 points: elapsed time: 312.44114 milliseconds 
+Search for 8 points: elapsed time: 8.85618 milliseconds 
+Search for 9 points: elapsed time: 12.34300 milliseconds 
+Search for 10 points: elapsed time: 8.36015 milliseconds 
+
+
+Test of naive with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 5.65051 milliseconds 
+Search for 2 points: elapsed time: 6.96847 milliseconds 
+Search for 3 points: elapsed time: 9.48018 milliseconds 
+Search for 4 points: elapsed time: 7.77816 milliseconds 
+Search for 5 points: elapsed time: 101.87358 milliseconds 
+Search for 6 points: elapsed time: 144.58388 milliseconds 
+Search for 7 points: elapsed time: 135.98752 milliseconds 
+Search for 8 points: elapsed time: 8.81520 milliseconds 
+Search for 9 points: elapsed time: 12.76169 milliseconds 
+Search for 10 points: elapsed time: 7.28327 milliseconds 
+
+
+Test of naive with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 7.85683 milliseconds 
+Search for 2 points: elapsed time: 7.87989 milliseconds 
+Search for 3 points: elapsed time: 6.79541 milliseconds 
+Search for 4 points: elapsed time: 6.80800 milliseconds 
+Search for 5 points: elapsed time: 8.72349 milliseconds 
+Search for 6 points: elapsed time: 11.41063 milliseconds 
+Search for 7 points: elapsed time: 7.29132 milliseconds 
+Search for 8 points: elapsed time: 5.83503 milliseconds 
+Search for 9 points: elapsed time: 11.75899 milliseconds 
+Search for 10 points: elapsed time: 11.76981 milliseconds 
+
+
+Test of naive with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 418.92605 milliseconds 
+Search for 2 points: elapsed time: 15.48901 milliseconds 
+Search for 3 points: elapsed time: 9.37960 milliseconds 
+Search for 4 points: elapsed time: 9.75925 milliseconds 
+Search for 5 points: elapsed time: 10.65984 milliseconds 
+Search for 6 points: elapsed time: 6.49611 milliseconds 
+Search for 7 points: elapsed time: 6.68473 milliseconds 
+Search for 8 points: elapsed time: 6.77135 milliseconds 
+Search for 9 points: elapsed time: 7.79010 milliseconds 
+Search for 10 points: elapsed time: 144.37624 milliseconds 
+
+
+Test of naive with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 84.40167 milliseconds 
+Search for 2 points: elapsed time: 3.12574 milliseconds 
+Search for 3 points: elapsed time: 3.98473 milliseconds 
+Search for 4 points: elapsed time: 4.43022 milliseconds 
+Search for 5 points: elapsed time: 6.13544 milliseconds 
+Search for 6 points: elapsed time: 8.23589 milliseconds 
+Search for 7 points: elapsed time: 7.59973 milliseconds 
+Search for 8 points: elapsed time: 15.51404 milliseconds 
+Search for 9 points: elapsed time: 12.09210 milliseconds 
+Search for 10 points: elapsed time: 15.76286 milliseconds 
+
+
+Test of naive with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 25.27913 milliseconds 
+Search for 2 points: elapsed time: 58.01972 milliseconds 
+Search for 3 points: elapsed time: 15.12479 milliseconds 
+Search for 4 points: elapsed time: 43.31255 milliseconds 
+Search for 5 points: elapsed time: 40.31321 milliseconds 
+Search for 6 points: elapsed time: 6.99101 milliseconds 
+Search for 7 points: elapsed time: 38.93323 milliseconds 
+Search for 8 points: elapsed time: 17.11808 milliseconds 
+Search for 9 points: elapsed time: 16.04953 milliseconds 
+Search for 10 points: elapsed time: 14.99198 milliseconds 
+
+
+Test of naive with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 7.15405 milliseconds 
+Search for 2 points: elapsed time: 27.13708 milliseconds 
+Search for 3 points: elapsed time: 6.12202 milliseconds 
+Search for 4 points: elapsed time: 11.59725 milliseconds 
+Search for 5 points: elapsed time: 9.46090 milliseconds 
+Search for 6 points: elapsed time: 8.05435 milliseconds 
+Search for 7 points: elapsed time: 149.54189 milliseconds 
+Search for 8 points: elapsed time: 7.25679 milliseconds 
+Search for 9 points: elapsed time: 5.78562 milliseconds 
+Search for 10 points: elapsed time: 8.16191 milliseconds 
+
+
+Test of naive with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 15.19431 milliseconds 
+Search for 2 points: elapsed time: 8.46700 milliseconds 
+Search for 3 points: elapsed time: 20.17994 milliseconds 
+Search for 4 points: elapsed time: 8.05740 milliseconds 
+Search for 5 points: elapsed time: 6.18315 milliseconds 
+Search for 6 points: elapsed time: 17.09813 milliseconds 
+Search for 7 points: elapsed time: 48.00337 milliseconds 
+Search for 8 points: elapsed time: 57.41605 milliseconds 
+Search for 9 points: elapsed time: 72.87921 milliseconds 
+Search for 10 points: elapsed time: 51.60280 milliseconds 
+
+
+Test of naive with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 7.49436 milliseconds 
+Search for 2 points: elapsed time: 5.84181 milliseconds 
+Search for 3 points: elapsed time: 7.79693 milliseconds 
+Search for 4 points: elapsed time: 69.17575 milliseconds 
+Search for 5 points: elapsed time: 32.05945 milliseconds 
+Search for 6 points: elapsed time: 10.47939 milliseconds 
+Search for 7 points: elapsed time: 10.45885 milliseconds 
+Search for 8 points: elapsed time: 28.68336 milliseconds 
+Search for 9 points: elapsed time: 118.51807 milliseconds 
+Search for 10 points: elapsed time: 5.91493 milliseconds 
+
+
+Test of naive with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 5.61980 milliseconds 
+Search for 2 points: elapsed time: 10.00551 milliseconds 
+Search for 3 points: elapsed time: 7.20427 milliseconds 
+Search for 4 points: elapsed time: 6.49833 milliseconds 
+Search for 5 points: elapsed time: 8.31343 milliseconds 
+Search for 6 points: elapsed time: 5.50558 milliseconds 
+Search for 7 points: elapsed time: 7.49034 milliseconds 
+Search for 8 points: elapsed time: 6.27531 milliseconds 
+Search for 9 points: elapsed time: 5.47194 milliseconds 
+Search for 10 points: elapsed time: 7.77203 milliseconds 
+
+
+Test of naive with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 3871.44442 milliseconds 
+Search for 2 points: elapsed time: 323.73602 milliseconds 
+Search for 3 points: elapsed time: 78.50058 milliseconds 
+Search for 4 points: elapsed time: 10.83361 milliseconds 
+Search for 5 points: elapsed time: 5.67174 milliseconds 
+Search for 6 points: elapsed time: 6.10541 milliseconds 
+Search for 7 points: elapsed time: 32.11902 milliseconds 
+Search for 8 points: elapsed time: 8.10159 milliseconds 
+Search for 9 points: elapsed time: 8.72613 milliseconds 
+Search for 10 points: elapsed time: 7.36896 milliseconds 
+
+
+Test of naive with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 159.57040 milliseconds 
+Search for 2 points: elapsed time: 174.24846 milliseconds 
+Search for 3 points: elapsed time: 38.92717 milliseconds 
+Search for 4 points: elapsed time: 24.53753 milliseconds 
+Search for 5 points: elapsed time: 15.64812 milliseconds 
+Search for 6 points: elapsed time: 38.27928 milliseconds 
+Search for 7 points: elapsed time: 106.36225 milliseconds 
+Search for 8 points: elapsed time: 84.16340 milliseconds 
+Search for 9 points: elapsed time: 35.13575 milliseconds 
+Search for 10 points: elapsed time: 66.48318 milliseconds 
+
+
+Test of naive with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 247.16357 milliseconds 
+Search for 2 points: elapsed time: 28.73834 milliseconds 
+Search for 3 points: elapsed time: 14.17163 milliseconds 
+Search for 4 points: elapsed time: 30.14516 milliseconds 
+Search for 5 points: elapsed time: 9.77770 milliseconds 
+Search for 6 points: elapsed time: 14.42905 milliseconds 
+Search for 7 points: elapsed time: 264.59961 milliseconds 
+Search for 8 points: elapsed time: 60.68933 milliseconds 
+Search for 9 points: elapsed time: 29.59276 milliseconds 
+Search for 10 points: elapsed time: 14.42489 milliseconds 
+
+
+Test of naive with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 70.19396 milliseconds 
+Search for 2 points: elapsed time: 75.00258 milliseconds 
+Search for 3 points: elapsed time: 69.22354 milliseconds 
+Search for 4 points: elapsed time: 97.48355 milliseconds 
+Search for 5 points: elapsed time: 9.39062 milliseconds 
+Search for 6 points: elapsed time: 101.62537 milliseconds 
+Search for 7 points: elapsed time: 205.87328 milliseconds 
+Search for 8 points: elapsed time: 20.41905 milliseconds 
+Search for 9 points: elapsed time: 32.14371 milliseconds 
+Search for 10 points: elapsed time: 8.46570 milliseconds 
+
+
+Test of naive with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 8.56444 milliseconds 
+Search for 2 points: elapsed time: 9.00272 milliseconds 
+Search for 3 points: elapsed time: 250.43417 milliseconds 
+Search for 4 points: elapsed time: 116.61664 milliseconds 
+Search for 5 points: elapsed time: 40.82133 milliseconds 
+Search for 6 points: elapsed time: 62.73879 milliseconds 
+Search for 7 points: elapsed time: 11.13578 milliseconds 
+Search for 8 points: elapsed time: 34.74211 milliseconds 
+Search for 9 points: elapsed time: 214.64695 milliseconds 
+Search for 10 points: elapsed time: 18.64306 milliseconds 
+
+
+Test of naive with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 117.31165 milliseconds 
+Search for 2 points: elapsed time: 77.87356 milliseconds 
+Search for 3 points: elapsed time: 13.62512 milliseconds 
+Search for 4 points: elapsed time: 7.39160 milliseconds 
+Search for 5 points: elapsed time: 30.02511 milliseconds 
+Search for 6 points: elapsed time: 430.24288 milliseconds 
+Search for 7 points: elapsed time: 10.35780 milliseconds 
+Search for 8 points: elapsed time: 5.71429 milliseconds 
+Search for 9 points: elapsed time: 19.97238 milliseconds 
+Search for 10 points: elapsed time: 10.53309 milliseconds 
+
+
+Test of naive with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 5243.13240 milliseconds 
+Search for 2 points: elapsed time: 316.94471 milliseconds 
+Search for 3 points: elapsed time: 248.91093 milliseconds 
+Search for 4 points: elapsed time: 104.02772 milliseconds 
+Search for 5 points: elapsed time: 15.98222 milliseconds 
+Search for 6 points: elapsed time: 9.61050 milliseconds 
+Search for 7 points: elapsed time: 252.09635 milliseconds 
+Search for 8 points: elapsed time: 160.65432 milliseconds 
+Search for 9 points: elapsed time: 154.37881 milliseconds 
+Search for 10 points: elapsed time: 32.14373 milliseconds 
+
+
+Test of naive with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 39.21004 milliseconds 
+Search for 2 points: elapsed time: 9.04430 milliseconds 
+Search for 3 points: elapsed time: 12.10332 milliseconds 
+Search for 4 points: elapsed time: 17.00291 milliseconds 
+Search for 5 points: elapsed time: 106.31215 milliseconds 
+Search for 6 points: elapsed time: 270.03283 milliseconds 
+Search for 7 points: elapsed time: 173.03475 milliseconds 
+Search for 8 points: elapsed time: 5.66890 milliseconds 
+Search for 9 points: elapsed time: 23.82876 milliseconds 
+Search for 10 points: elapsed time: 6.57711 milliseconds 
+
+
+Test of naive with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 8.73624 milliseconds 
+Search for 2 points: elapsed time: 15.67708 milliseconds 
+Search for 3 points: elapsed time: 9.74383 milliseconds 
+Search for 4 points: elapsed time: 11.35862 milliseconds 
+Search for 5 points: elapsed time: 426.54911 milliseconds 
+Search for 6 points: elapsed time: 41.88423 milliseconds 
+Search for 7 points: elapsed time: 13.40719 milliseconds 
+Search for 8 points: elapsed time: 11.88380 milliseconds 
+Search for 9 points: elapsed time: 351.23759 milliseconds 
+Search for 10 points: elapsed time: 34.02559 milliseconds 
+
+
+Test of naive with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 210.03587 milliseconds 
+Search for 2 points: elapsed time: 144.74612 milliseconds 
+Search for 3 points: elapsed time: 20.47713 milliseconds 
+Search for 4 points: elapsed time: 217.22330 milliseconds 
+Search for 5 points: elapsed time: 119.49165 milliseconds 
+Search for 6 points: elapsed time: 87.60604 milliseconds 
+Search for 7 points: elapsed time: 106.36125 milliseconds 
+Search for 8 points: elapsed time: 37.92275 milliseconds 
+Search for 9 points: elapsed time: 29.52703 milliseconds 
+Search for 10 points: elapsed time: 33.55983 milliseconds 
+
+
+Test of naive with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 233.24654 milliseconds 
+Search for 2 points: elapsed time: 47.52840 milliseconds 
+Search for 3 points: elapsed time: 17.12902 milliseconds 
+Search for 4 points: elapsed time: 7.33255 milliseconds 
+Search for 5 points: elapsed time: 8.66598 milliseconds 
+Search for 6 points: elapsed time: 228.59457 milliseconds 
+Search for 7 points: elapsed time: 263.38809 milliseconds 
+Search for 8 points: elapsed time: 36.15436 milliseconds 
+Search for 9 points: elapsed time: 16.97062 milliseconds 
+Search for 10 points: elapsed time: 6.33319 milliseconds 
+
+
+Test of naive with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 5.65351 milliseconds 
+Search for 2 points: elapsed time: 5.80721 milliseconds 
+Search for 3 points: elapsed time: 10.30561 milliseconds 
+Search for 4 points: elapsed time: 487.27443 milliseconds 
+Search for 5 points: elapsed time: 76.13016 milliseconds 
+Search for 6 points: elapsed time: 7.67012 milliseconds 
+Search for 7 points: elapsed time: 13.72996 milliseconds 
+Search for 8 points: elapsed time: 23.16982 milliseconds 
+Search for 9 points: elapsed time: 192.52199 milliseconds 
+Search for 10 points: elapsed time: 224.96413 milliseconds 
+
+
+Test of naive with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 4170.49771 milliseconds 
+Search for 2 points: elapsed time: 65.33569 milliseconds 
+Search for 3 points: elapsed time: 318.69230 milliseconds 
+Search for 4 points: elapsed time: 24.74750 milliseconds 
+Search for 5 points: elapsed time: 55.50339 milliseconds 
+Search for 6 points: elapsed time: 6.09367 milliseconds 
+Search for 7 points: elapsed time: 5.66618 milliseconds 
+Search for 8 points: elapsed time: 5.50551 milliseconds 
+Search for 9 points: elapsed time: 5.32503 milliseconds 
+Search for 10 points: elapsed time: 12.61751 milliseconds 
+
+
+Test of naive with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 335.72957 milliseconds 
+Search for 2 points: elapsed time: 64.36217 milliseconds 
+Search for 3 points: elapsed time: 59.87056 milliseconds 
+Search for 4 points: elapsed time: 5.84081 milliseconds 
+Search for 5 points: elapsed time: 17.89905 milliseconds 
+Search for 6 points: elapsed time: 10.70529 milliseconds 
+Search for 7 points: elapsed time: 102.06462 milliseconds 
+Search for 8 points: elapsed time: 295.49081 milliseconds 
+Search for 9 points: elapsed time: 9.73067 milliseconds 
+Search for 10 points: elapsed time: 7.97744 milliseconds 
+
+
+Test of naive with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 8.85494 milliseconds 
+Search for 2 points: elapsed time: 7.75217 milliseconds 
+Search for 3 points: elapsed time: 7.86370 milliseconds 
+Search for 4 points: elapsed time: 7.97156 milliseconds 
+Search for 5 points: elapsed time: 10.75237 milliseconds 
+Search for 6 points: elapsed time: 8.00981 milliseconds 
+Search for 7 points: elapsed time: 6.71341 milliseconds 
+Search for 8 points: elapsed time: 12.28774 milliseconds 
+Search for 9 points: elapsed time: 6.68025 milliseconds 
+Search for 10 points: elapsed time: 8.65396 milliseconds 
+
+
+Test of naive with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 236.14599 milliseconds 
+Search for 2 points: elapsed time: 223.04867 milliseconds 
+Search for 3 points: elapsed time: 246.48744 milliseconds 
+Search for 4 points: elapsed time: 15.93209 milliseconds 
+Search for 5 points: elapsed time: 9.38851 milliseconds 
+Search for 6 points: elapsed time: 17.57599 milliseconds 
+Search for 7 points: elapsed time: 70.18857 milliseconds 
+Search for 8 points: elapsed time: 323.39431 milliseconds 
+Search for 9 points: elapsed time: 29.28198 milliseconds 
+Search for 10 points: elapsed time: 7.46746 milliseconds 
+
+
+Test of naive with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 12.47278 milliseconds 
+Search for 2 points: elapsed time: 19.04489 milliseconds 
+Search for 3 points: elapsed time: 7.66217 milliseconds 
+Search for 4 points: elapsed time: 6.98225 milliseconds 
+Search for 5 points: elapsed time: 8.40928 milliseconds 
+Search for 6 points: elapsed time: 5.53796 milliseconds 
+Search for 7 points: elapsed time: 10.76313 milliseconds 
+Search for 8 points: elapsed time: 356.00842 milliseconds 
+Search for 9 points: elapsed time: 121.93897 milliseconds 
+Search for 10 points: elapsed time: 183.30126 milliseconds 
+
+
+Test of naive with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 11.48096 milliseconds 
+Search for 2 points: elapsed time: 15.97097 milliseconds 
+Search for 3 points: elapsed time: 7.08103 milliseconds 
+Search for 4 points: elapsed time: 23.75381 milliseconds 
+Search for 5 points: elapsed time: 7.49437 milliseconds 
+Search for 6 points: elapsed time: 16.06304 milliseconds 
+Search for 7 points: elapsed time: 9.64548 milliseconds 
+Search for 8 points: elapsed time: 389.85597 milliseconds 
+Search for 9 points: elapsed time: 40.31166 milliseconds 
+Search for 10 points: elapsed time: 17.99602 milliseconds 
+
+
+Test of naive with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 2124.91457 milliseconds 
+Search for 2 points: elapsed time: 7.91587 milliseconds 
+Search for 3 points: elapsed time: 21.21363 milliseconds 
+Search for 4 points: elapsed time: 71.38899 milliseconds 
+Search for 5 points: elapsed time: 53.23502 milliseconds 
+Search for 6 points: elapsed time: 113.54236 milliseconds 
+Search for 7 points: elapsed time: 108.38067 milliseconds 
+Search for 8 points: elapsed time: 6.04004 milliseconds 
+Search for 9 points: elapsed time: 6.73613 milliseconds 
+Search for 10 points: elapsed time: 80.61620 milliseconds 
+
+
+Test of naive with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 16.85866 milliseconds 
+Search for 2 points: elapsed time: 9.43044 milliseconds 
+Search for 3 points: elapsed time: 12.88130 milliseconds 
+Search for 4 points: elapsed time: 11.99552 milliseconds 
+Search for 5 points: elapsed time: 112.50912 milliseconds 
+Search for 6 points: elapsed time: 8.64574 milliseconds 
+Search for 7 points: elapsed time: 20.87391 milliseconds 
+Search for 8 points: elapsed time: 44.97264 milliseconds 
+Search for 9 points: elapsed time: 13.99586 milliseconds 
+Search for 10 points: elapsed time: 10.05495 milliseconds 
+
+
+Test of naive with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 8.91042 milliseconds 
+Search for 2 points: elapsed time: 5.51039 milliseconds 
+Search for 3 points: elapsed time: 7.19166 milliseconds 
+Search for 4 points: elapsed time: 5.49662 milliseconds 
+Search for 5 points: elapsed time: 6.80803 milliseconds 
+Search for 6 points: elapsed time: 54.07764 milliseconds 
+Search for 7 points: elapsed time: 37.25754 milliseconds 
+Search for 8 points: elapsed time: 20.12995 milliseconds 
+Search for 9 points: elapsed time: 76.81505 milliseconds 
+Search for 10 points: elapsed time: 155.74289 milliseconds 
+
+
+Test of naive with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 16.27628 milliseconds 
+Search for 2 points: elapsed time: 9.87599 milliseconds 
+Search for 3 points: elapsed time: 83.76341 milliseconds 
+Search for 4 points: elapsed time: 9.17138 milliseconds 
+Search for 5 points: elapsed time: 11.10578 milliseconds 
+Search for 6 points: elapsed time: 10.02573 milliseconds 
+Search for 7 points: elapsed time: 10.48288 milliseconds 
+Search for 8 points: elapsed time: 74.60240 milliseconds 
+Search for 9 points: elapsed time: 111.33930 milliseconds 
+Search for 10 points: elapsed time: 6.72427 milliseconds 
+
+
+Test of naive with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 8.04384 milliseconds 
+Search for 2 points: elapsed time: 5.39162 milliseconds 
+Search for 3 points: elapsed time: 11.64278 milliseconds 
+Search for 4 points: elapsed time: 9.04457 milliseconds 
+Search for 5 points: elapsed time: 9.27280 milliseconds 
+Search for 6 points: elapsed time: 6.14786 milliseconds 
+Search for 7 points: elapsed time: 7.11542 milliseconds 
+Search for 8 points: elapsed time: 87.88069 milliseconds 
+Search for 9 points: elapsed time: 207.77164 milliseconds 
+Search for 10 points: elapsed time: 7.64444 milliseconds 
+
+
+Test of naive with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 9.93884 milliseconds 
+Search for 2 points: elapsed time: 6.66617 milliseconds 
+Search for 3 points: elapsed time: 7.66878 milliseconds 
+Search for 4 points: elapsed time: 7.78202 milliseconds 
+Search for 5 points: elapsed time: 5.90076 milliseconds 
+Search for 6 points: elapsed time: 7.83416 milliseconds 
+Search for 7 points: elapsed time: 7.52579 milliseconds 
+Search for 8 points: elapsed time: 16.12118 milliseconds 
+Search for 9 points: elapsed time: 220.67679 milliseconds 
+Search for 10 points: elapsed time: 7.89880 milliseconds 
+
+
+Test of naive with 1000 Points
+============================================================= 
+Search for 1 points: elapsed time: 5065.64276 milliseconds 
+Search for 2 points: elapsed time: 19.57324 milliseconds 
+Search for 3 points: elapsed time: 10.20259 milliseconds 
+Search for 4 points: elapsed time: 10.98119 milliseconds 
+Search for 5 points: elapsed time: 6.00582 milliseconds 
+Search for 6 points: elapsed time: 287.54909 milliseconds 
+Search for 7 points: elapsed time: 265.80874 milliseconds 
+Search for 8 points: elapsed time: 71.88364 milliseconds 
+Search for 9 points: elapsed time: 175.42763 milliseconds 
+Search for 10 points: elapsed time: 11.18066 milliseconds 
+
+
+Test of naive with 3000 Points
+============================================================= 
+Search for 1 points: elapsed time: 10.96755 milliseconds 
+Search for 2 points: elapsed time: 6.48469 milliseconds 
+Search for 3 points: elapsed time: 10.46459 milliseconds 
+Search for 4 points: elapsed time: 10.19097 milliseconds 
+Search for 5 points: elapsed time: 21.16206 milliseconds 
+Search for 6 points: elapsed time: 5.51633 milliseconds 
+Search for 7 points: elapsed time: 358.37722 milliseconds 
+Search for 8 points: elapsed time: 104.29354 milliseconds 
+Search for 9 points: elapsed time: 17.44554 milliseconds 
+Search for 10 points: elapsed time: 6.87106 milliseconds 
+
+
+Test of naive with 6000 Points
+============================================================= 
+Search for 1 points: elapsed time: 7.03403 milliseconds 
+Search for 2 points: elapsed time: 229.90572 milliseconds 
+Search for 3 points: elapsed time: 108.38514 milliseconds 
+Search for 4 points: elapsed time: 13.64943 milliseconds 
+Search for 5 points: elapsed time: 36.85628 milliseconds 
+Search for 6 points: elapsed time: 162.03768 milliseconds 
+Search for 7 points: elapsed time: 105.82712 milliseconds 
+Search for 8 points: elapsed time: 212.21858 milliseconds 
+Search for 9 points: elapsed time: 156.56425 milliseconds 
+Search for 10 points: elapsed time: 20.52629 milliseconds 
+
+
+Test of naive with 9000 Points
+============================================================= 
+Search for 1 points: elapsed time: 10.60990 milliseconds 
+Search for 2 points: elapsed time: 7.63778 milliseconds 
+Search for 3 points: elapsed time: 6.46344 milliseconds 
+Search for 4 points: elapsed time: 11.93450 milliseconds 
+Search for 5 points: elapsed time: 10.62605 milliseconds 
+Search for 6 points: elapsed time: 5.92955 milliseconds 
+Search for 7 points: elapsed time: 5.70172 milliseconds 
+Search for 8 points: elapsed time: 7.38432 milliseconds 
+Search for 9 points: elapsed time: 10.43691 milliseconds 
+Search for 10 points: elapsed time: 423.98460 milliseconds 
+
+
+Test of naive with 15000 Points
+============================================================= 
+Search for 1 points: elapsed time: 52.87827 milliseconds 
+Search for 2 points: elapsed time: 13.14685 milliseconds 
+Search for 3 points: elapsed time: 6.04124 milliseconds 
+Search for 4 points: elapsed time: 7.25886 milliseconds 
+Search for 5 points: elapsed time: 18.28679 milliseconds 
+Search for 6 points: elapsed time: 319.97514 milliseconds 
+Search for 7 points: elapsed time: 61.72188 milliseconds 
+Search for 8 points: elapsed time: 107.63678 milliseconds 
+Search for 9 points: elapsed time: 51.73373 milliseconds 
+Search for 10 points: elapsed time: 128.82907 milliseconds 
+
+
+Test of naive with 30000 Points
+============================================================= 
+Search for 1 points: elapsed time: 7.14461 milliseconds 
+Search for 2 points: elapsed time: 7.21392 milliseconds 
+Search for 3 points: elapsed time: 5.90252 milliseconds 
+Search for 4 points: elapsed time: 8.21854 milliseconds 
+Search for 5 points: elapsed time: 6.17137 milliseconds 
+Search for 6 points: elapsed time: 6.46379 milliseconds 
+Search for 7 points: elapsed time: 6.93872 milliseconds 
+Search for 8 points: elapsed time: 16.21776 milliseconds 
+Search for 9 points: elapsed time: 9.44479 milliseconds 
+Search for 10 points: elapsed time: 377.40051 milliseconds 

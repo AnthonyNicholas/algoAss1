@@ -1,0 +1,1 @@
+Point{id=id475, cat=RESTAURANT, lat=-35.0267861645, lon=144.4989037259}

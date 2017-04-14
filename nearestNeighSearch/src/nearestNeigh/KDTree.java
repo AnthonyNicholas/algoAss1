@@ -97,7 +97,7 @@ public class KDTree {
 
         // Else repeat process
         bXDim = !bXDim;
-        currNode = getNodeFromTree(searchPoint, currNode, bXDim);
+        currNode = getNodeHelper(searchPoint, currNode, bXDim);
         return currNode;
     }
 
